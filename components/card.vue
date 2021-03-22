@@ -26,7 +26,7 @@
       <div class="img-wrapper" :class="post.padding">
         <img :src="require(`~/assets/img/proyectos/${post.img}`)" alt="{{}}" />
       </div>
-
+    <div class="card-content">
       <!-- <Categories :pro="projectes" /> -->
       <ul class="categories">
         <li
@@ -37,6 +37,9 @@
           {{ category }}
         </li>
       </ul>
+
+      <a class="info" href="">més info</a>
+    </div>
       <!-- <a  class="project-website" :href="post.url" target="_blank">{{post.url}}</a> -->
 
       <!-- <nuxt-content :document="post" /> -->
@@ -97,6 +100,14 @@ export default {
   transition: all 0.5s;
   display: inline-block;
   margin-right: 2rem;
+}
+
+.card-content {
+  display:flex;
+  justify-content: space-between;
+   margin-top: 1rem;
+  height: 5vh;
+
 }
 
 @media (max-width: 768px) {
@@ -175,6 +186,15 @@ img {
   margin:0 auto;
 }
 
+/* .info {
+  border: 1px solid #ddd;
+  font-family:'Major Mono Display', monospace; 
+  padding: 0.5rem;
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 0.1rem 0.3rem;
+} */
+
 .padding-h {
   padding-left: 4rem;
   padding-right: 4rem;
@@ -197,16 +217,19 @@ img {
 }
 
 .categories {
-  margin-top: 1rem;
-  height: 5vh;
+ 
 }
-.categories li {
+.categories li, .info {
   padding: 0.1rem 0.3rem;
   font-family: 'Major Mono Display', monospace;
   font-size: 0.8rem;
   display: inline-block;
   margin-bottom: 0.5rem;
   margin-right: 0.5rem;
+}
+
+.info  {
+  border: 1px solid #ddd;
 }
 /* .project-website {
   color:pink;
