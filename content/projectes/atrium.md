@@ -2,7 +2,7 @@
 title: Atrium Viladecans
 description: atrium viladecans moletes actuacions ammet
  montesori
-img: mcd.jpg
+img: atrium.png
 alt: my first blog post
 speech: heloo soy un proyecto muy interesante montesory
 categories: [wordpress,tailwind,disseny]
@@ -10,6 +10,6 @@ url: https://atriumviladecans.com
 
 ---
 
-## Natura
+## atrium viladecans
 
-lorem impsum Natura summit
+lorem impsum atrium viladecans
