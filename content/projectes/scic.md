@@ -4,9 +4,9 @@ description: scic corals infantils
 img: scic.png
 padding: padding-v
 alt: my first blog post
-speech: heloo soy un proyecto muy interesante montesory
+speech: Música i mainada. Dues de les nostres especialitats. 
 categories: [wordpress,tailwind,disseny]
-url: https://scic.cat
+url: http://scic.cat
 ---
 
 ## Natura

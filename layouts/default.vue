@@ -7,8 +7,8 @@
 
 <style>
 html {
-font-display:  subpixel-antialiased;
-font-smooth: antialiased;
+/* font-display:  subpixel-antialiased; */
+/* font-smooth: antialiased; */
 font-family: 'Roboto',sans-serif;
 font-weight: 100;
 }

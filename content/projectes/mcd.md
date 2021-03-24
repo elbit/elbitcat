@@ -2,10 +2,11 @@
 title: Mcd stuDio.com 
 description: mcd architecture web page
 img: mcd.png
+padding: padding-v
 alt: mcd studio
-speech: heloo soy un proyecto muy interesante de arquitectura con grid al estilo instagram que lo flipas neng
-categories: [wordpress,tailwind,disseny]
+speech: Els arquitectes tenen clar com volen el seu web. Nosaltres ho fem possible.
 url: http://mcd-studio.com
+categories: [wordpress,tailwind,disseny]
 
 ---
 

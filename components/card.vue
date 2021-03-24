@@ -19,7 +19,7 @@
       class="card"
       v-for="post of pro"
       :key="post.slug"
-      @mouseover="emitMethod(post.speech)"
+     
     >
       <h1>{{ post.title }}</h1>
 
@@ -38,7 +38,7 @@
         </li>
       </ul>
 
-      <a class="info" href="">més info</a>
+      <a class="info" href=""  @click.prevent="emitMethod(post)" >més info</a>
     </div>
       <!-- <a  class="project-website" :href="post.url" target="_blank">{{post.url}}</a> -->
 
@@ -61,7 +61,7 @@ export default {
 
   methods: {
     emitMethod(item) {
-      console.log('click3e')
+      // console.log('click3e')
       EventBus.$emit('EVENT_NAME', item)
     },
   },
@@ -81,13 +81,17 @@ export default {
   /* flex-wrap: wrap; */
   overflow-x: auto;
   overflow-y: hidden;
-  boxrder: 1px solid green;
+  border: 1px solid green;
   display: flex;
   height: 80vh;
   padding-bottom: 2rem;
   padding-left: 2rem;
   padding-top: 3vh;
+  padding-right: 4rem;
 }
+/* .cardbase:last-child {
+  margin-right:3rem;
+  } */
 .card {
   border: solid silver 1px;
   width: 1000px;
@@ -101,6 +105,12 @@ export default {
   display: inline-block;
   margin-right: 2rem;
 }
+
+/* .card:last-child{
+  
+  margin-right:1000px;
+ 
+} */
 
 .card-content {
   display:flex;
@@ -222,11 +232,15 @@ img {
 .categories li, .info {
   padding: 0.1rem 0.3rem;
   font-family: 'Major Mono Display', monospace;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   display: inline-block;
   margin-bottom: 0.5rem;
   margin-right: 0.5rem;
 }
+/* .info {
+  font-size: 0.7rem;
+  line-height: 1;
+} */
 
 .info  {
   border: 1px solid #ddd;

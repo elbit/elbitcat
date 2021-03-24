@@ -2,10 +2,9 @@
 title: Andrea Lovetere
 description: Andrea lovetere web dessing
 img: andrea.png
-alt: Andrea Lovetere
-speech: heloo soy un art director muy bueno que vivo en new zealand
-categories: [wordpress,tailwind,disseny]
+speech: Treballar per un gran dissenyador posa les coses molt fàcils!
 url: https://andrealovetere.com
+categories: [wordpress,tailwind,twig, desenvoupament]
 
 ---
 

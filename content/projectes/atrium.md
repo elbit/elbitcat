@@ -4,7 +4,7 @@ description: atrium viladecans moletes actuacions ammet
  montesori
 img: atrium.png
 alt: my first blog post
-speech: heloo soy un proyecto muy interesante montesory
+speech: Troba l'espectacle que més t'agradarà. 
 categories: [wordpress,tailwind,disseny]
 url: https://atriumviladecans.com
 

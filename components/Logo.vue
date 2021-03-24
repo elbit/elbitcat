@@ -27,4 +27,10 @@ svg {
     max-height: 100%;
 }
 
+@media (max-width: 768px) {
+ svg {
+   max-height:10vh;
+  }
+}
+
 </style>

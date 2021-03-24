@@ -1,10 +1,12 @@
  <template>
   <div class="header">
-    <div class="logox">
-      <Logo />
+    <div class="logox" @click="resetFields()">
+       <Logo-line />
+      
     </div>
     <div class="b-wrapper">
-      <Bubble :dataspeech="speech" :strings="speech" :home="home" />
+      <Bubble  :url="post.url" :dataspeech="post.speech" :strings="post.speech" :home="home" />
+      
     </div>
   </div>
 </template>
@@ -15,13 +17,14 @@ import EventBus from '../components/global/event-bus'
 export default {
   data() {
     return {
-      speech: 'soc elbit cat',
+      strings: 'Hola, soc el bit ! qué necessites?<br> <a @click.prevent="console.log(`menu`)" class="link" href="/"> Contacte</a> / <a class="link" href="/"> Preus</a> / <a class="link" href="/"> Freelance</a> ',
       home: true,
+      post:[]
     }
   },
   mounted() {
     EventBus.$on('EVENT_NAME', (data) => {
-      this.speech = data
+      this.post = data
       this.home = false
     })
     // EventBus.$on("reset", () => {
@@ -36,6 +39,11 @@ export default {
       page,
     }
   },
+  methods: {
+        resetFields () {
+            Object.assign(this.$data, this.$options.data.call(this));
+        }
+    }
 }
 </script>
 
@@ -49,24 +57,35 @@ export default {
   position: fixed;
   background-color: white;
   top: 0;
-  /* backdrop-filter: blur(20px); */
   height: 20vh;
 }
 
-@media (max-width: 768px) {
-  .header {
-    height: 40vh;
-  }
-}
+
 
 .logox {
   /* width: 20%; */
   max-width: 150px;
   bordxer: solid 1px greenyellow;
   max-height: 150px;
+  cursor: pointer;
 }
 .b-wrapper {
   width: calc(100% - 150px);
   borxder: 1px solid salmon;
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 40vh;
+    flex-direction: column-reverse;
+      flex-wrap:  wrap;
+  }
+  .logox {
+    width: 100%;
+  }
+  .b-wrapper {
+  width: 100%;
+  
+  } 
 }
 </style>
