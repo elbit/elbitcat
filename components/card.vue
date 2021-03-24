@@ -36,9 +36,12 @@
         >
           {{ category }}
         </li>
+        
+        
       </ul>
-
       <a class="info" href=""  @click.prevent="emitMethod(post)" >més info</a>
+
+      
     </div>
       <!-- <a  class="project-website" :href="post.url" target="_blank">{{post.url}}</a> -->
 
@@ -81,7 +84,7 @@ export default {
   /* flex-wrap: wrap; */
   overflow-x: auto;
   overflow-y: hidden;
-  border: 1px solid green;
+  borxder: 1px solid green;
   display: flex;
   height: 80vh;
   padding-bottom: 2rem;
@@ -116,7 +119,7 @@ export default {
   display:flex;
   justify-content: space-between;
    margin-top: 1rem;
-  height: 5vh;
+  /* height: 5vh; */
 
 }
 
@@ -237,13 +240,16 @@ img {
   margin-bottom: 0.5rem;
   margin-right: 0.5rem;
 }
+.categories li:last-child {
+  align-self: flex-end;
+}
 /* .info {
   font-size: 0.7rem;
   line-height: 1;
 } */
 
 .info  {
-  border: 1px solid #ddd;
+  border: 1px solid #333;
 }
 /* .project-website {
   color:pink;

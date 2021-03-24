@@ -53,7 +53,7 @@ export default {
   padding: 3vh 2rem;
   flex-wrap: wrap;
   width: 100%;
-  boxrder: solid 1px red;
+  borxder: solid 1px red;
   position: fixed;
   background-color: white;
   top: 0;
@@ -64,13 +64,13 @@ export default {
 
 .logox {
   /* width: 20%; */
-  max-width: 150px;
-  bordxer: solid 1px greenyellow;
-  max-height: 150px;
+  max-width: 15vw;
+  borxder: solid 1px greenyellow;
+  /* max-height: 150px; */
   cursor: pointer;
 }
 .b-wrapper {
-  width: calc(100% - 150px);
+  width: calc(100% - 15vw);
   borxder: 1px solid salmon;
 }
 

@@ -1,8 +1,10 @@
 <template>
   
+
+
 <svg width="175px" height="102px" viewBox="0 0 175 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
-    <desc>Created with Sketch.</desc>
+   
+   
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Desktop-HD-Copy" transform="translate(-71.000000, -67.000000)">
@@ -18,7 +20,7 @@
                         <tspan x="0.43830045" y="101">elbit.cat</tspan>
                     </text>
                 </g>
-                <path d="M177,41 L148,53" id="Path-2" stroke="#4A4A4A"></path>
+                <path d="M177,45 L148,57" id="Path-2" stroke="#C0C0C0"></path>
             </g>
         </g>
     </g>
@@ -28,6 +30,7 @@
 <style scoped>
 
 svg {
+    width:100%;
     max-height: 100%;
 }
 

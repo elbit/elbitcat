@@ -106,7 +106,7 @@ export default {
  /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); */
 .bubble {
   border: 1px silver solid;
-  padding: 1rem 1rem;
+  /* //padding: 1rem 1rem; */
   color:#333;
   /* height: 40px; */
   width: 100%;
@@ -114,11 +114,12 @@ export default {
   font-size: calc(14px + 12 * ((100vw - 320px) / 1680));
   /* font-size: 1.4rem; */
   background-color:white;
-  height:100%;
+  /* height:10vh; */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  /* margin-top:1vh; */
 
 }
 
@@ -158,7 +159,7 @@ export default {
 
   boxrder: 1px blue solid;
 }
-.speaking {
+/* .speaking {
   border: #e35bff 1px solid; 
-}
+} */
 </style>
