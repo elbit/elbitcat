@@ -86,10 +86,10 @@ export default {
   overflow-y: hidden;
   borxder: 1px solid green;
   display: flex;
-  height: 80vh;
+  /* height: 80vh; */
   padding-bottom: 2rem;
   padding-left: 2rem;
-  padding-top: 3vh;
+  padding-top: 5vh;
   padding-right: 4rem;
 }
 /* .cardbase:last-child {
@@ -100,10 +100,6 @@ export default {
   width: 1000px;
   min-width: 500px;
   padding: 0.5rem;
-  /* //width: 100%; */
-  /* float: left; */
-
-  /* margin-bottom: 1rem; */
   transition: all 0.5s;
   display: inline-block;
   margin-right: 2rem;
@@ -118,52 +114,11 @@ export default {
 .card-content {
   display:flex;
   justify-content: space-between;
-   margin-top: 1rem;
+  margin-top: 1rem;
   /* height: 5vh; */
 
 }
 
-@media (max-width: 768px) {
-  .cardbase {
-    height: 60vh;
-  }
-  .card {
-    width: 70vw;
-    max-width: 70vw;
-    min-width: 70vw;
-  }
-}
-
-@media (min-height: 768px) {
-  .cardbase {
-    height: 80vh;
-  }
-  .card {
-    width: 800px;
-    max-width: 800px;
-    min-width: 800px;
-    background-color:seashell;
-  }
-}
-
-/* .card:hover {
-    position:absolute;
-    width: calc(100% - 4rem);
-    background-color:pink;
-    z-index: 1000;
-    left:2rem;
-    top:20vh;
-    height: 75vh;
-  } */
-
-/* .active {
-    transform: perspective(75em) rotatey(4deg);
-    box-shadow: rgba(22, 31, 39, 0.42) 0px 60px 123px -25px,
-      rgba(19, 26, 32, 0.08) 0px 35px 75px -35px;
-
-    /* max-width: 100%; 
-    width: 100%;
-  } */
 
 .card h1 {
   font-family: 'Major Mono Display', monospace;
@@ -199,14 +154,6 @@ img {
   margin:0 auto;
 }
 
-/* .info {
-  border: 1px solid #ddd;
-  font-family:'Major Mono Display', monospace; 
-  padding: 0.5rem;
-  display: inline-block;
-  font-size: 0.8rem;
-  padding: 0.1rem 0.3rem;
-} */
 
 .padding-h {
   padding-left: 4rem;
@@ -261,5 +208,38 @@ img {
 /* .card:hover img {
     /* transform: perspective(35em) rotatey(-10deg) scale(1.05); 
   } */
+@media (max-width: 768px) {
+  .cardbase {
+    /* height: 90vh; */
+    borxder: 5px solid green;
+
+    padding: 2vh;
+  }
+  .card {
+    width: 75vw;
+    max-width: 75vw;
+    min-width: 75vw;
+    max-height: 64vh;
+  }
+
+  .img-wrapper {
+  
+  height: 47vh;
+  padding: 1rem; 
+
+}
+}
+
+  @media (min-height: 768px) {
+  .cardbase {
+    height: 80vh;
+  }
+  .card {
+    width: 800px;
+    max-width: 800px;
+    min-width: 800px;
+    background-color:seashell;
+  }
+}
 </style>
 

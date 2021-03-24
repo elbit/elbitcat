@@ -22,7 +22,7 @@ font-weight: 100;
 
 img, svg {
   max-width:100%;
-  max-height: 100%;
+  /* max-height: 100%; */
 }
 .page-container {
     padding: 2rem;

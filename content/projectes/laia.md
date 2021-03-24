@@ -1,7 +1,7 @@
 ---
 title: Laia Piqué
 description: Andrea lovetere web dessing
-img: laia.jpg
+img: laia2.png
 speech: Crear la imatge per una psicòloga per fer veure que totes hem d'anar al metge.
 url: 
 categories: [imatge corporativa, papereria, ]

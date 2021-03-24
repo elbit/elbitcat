@@ -1,6 +1,6 @@
 <template>
   
-    <div class="card-wrapper">
+    <div class="cards-wrapper">
       <Card :pro="projectes" /> 
     </div>
   
@@ -22,23 +22,19 @@ export default {
 </script>
 
 <style>
-.card-wrapper {
-   /* display: flex; */
-  margin-bottom: 0;
-  /* flex-wrap: wrap; */
-  /* width: 100%; */
+.cards-wrapper {
   borxder: solid 1px red;
-  margin-top:20vh;
+  /* margin-top:19vh; */
   width:auto;
   overflow-x: auto;
   overflow-y: hidden;
-  height: auto;
-  
+  height: 79vh; 
 }
 
 @media (max-width: 768px) {
-  .card-wrapper {
-    margin-top: 40vh;
-  }
+  .cards-wrapper {
+    /* margin-top:30vh; */
+    height: 70vh; 
+  } 
 }
 </style>

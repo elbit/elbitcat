@@ -67,7 +67,7 @@ export default {
       this.dataspeech 
     },
     pricesdata() {
-      this.dataspeech = "Fem el teu pressupost a mida de les teves necessitats, sempre prioritzant la millor manera d'ajudar-te. Lorem impsum en el bit fem treball a mida artesans, pillar textes del projecte scic"
+      this.dataspeech = "Fem el teu pressupost a mida de les teves necessitats, sempre prioritzant la millor manera d'ajudar-te. 15 anys d'experiencia en"
     },
     resetFields() {
             Object.assign(this.$data, this.$options.data.call(this));
@@ -106,12 +106,12 @@ export default {
  /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); */
 .bubble {
   border: 1px silver solid;
-  /* //padding: 1rem 1rem; */
+  padding: 0 0.5rem;
   color:#333;
   /* height: 40px; */
   width: 100%;
   font-family: 'VT323', monospace;
-  font-size: calc(14px + 12 * ((100vw - 320px) / 1680));
+  font-size: calc(20px + 11 * ((100vw - 800px) / 2000));
   /* font-size: 1.4rem; */
   background-color:white;
   /* height:10vh; */

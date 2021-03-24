@@ -1,8 +1,7 @@
  <template>
   <div class="header">
-    <div class="logox" @click="resetFields()">
-       <Logo-line />
-      
+    <div class="logo-wrapper" @click="resetFields()">
+       <Logo-line />   
     </div>
     <div class="b-wrapper">
       <Bubble  :url="post.url" :dataspeech="post.speech" :strings="post.speech" :home="home" />
@@ -50,41 +49,45 @@ export default {
 <style scoped>
 .header {
   display: flex;
-  padding: 3vh 2rem;
-  flex-wrap: wrap;
+  margin: 3vh 0;
+  padding: 0 2rem;
+  flex-wrap: nowrap;
   width: 100%;
-  borxder: solid 1px red;
-  position: fixed;
+  boxrder: solid 1px green;
   background-color: white;
   top: 0;
-  height: 20vh;
+  height: 15vh; /* 15 +6  */
 }
 
-
-
-.logox {
-  /* width: 20%; */
-  max-width: 15vw;
-  borxder: solid 1px greenyellow;
-  /* max-height: 150px; */
+.logo-wrapper {
+  max-width: 14vw;
+  boxder: solid 1px greenyellow;
   cursor: pointer;
 }
 .b-wrapper {
-  width: calc(100% - 15vw);
+  width: calc(100vw - 14vw);
   borxder: 1px solid salmon;
 }
 
 @media (max-width: 768px) {
   .header {
-    height: 40vh;
+    height: 30vh;
+    margin: 0;
+    borxder:lightseagreen solid 1px;
     flex-direction: column-reverse;
-      flex-wrap:  wrap;
+    flex-wrap:  wrap;
+    padding:0;
+    margin: 0 3vw;
   }
-  .logox {
-    width: 100%;
+  .logo-wrapper {
+    width: 93vw;
+    max-width: 100%;
+    borxder:violet solid 1px;
+    height:10vh;
   }
   .b-wrapper {
-  width: 100%;
+  width: 93vw;
+  height: 17vh;
   
   } 
 }
