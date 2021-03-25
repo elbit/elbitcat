@@ -14,10 +14,9 @@ font-weight: 100;
 }
 
 body {
-  /* height: 100vh; */
-  border:10px solid rebeccapurple;
+  height: 100vh;
+  border:1px solid rebeccapurple;
   /* overflow: hidden; */
- 
   height: -webkit-fill-available;
 }
 
