@@ -14,14 +14,16 @@ font-weight: 100;
 }
 
 body {
-  min-height: 100vh;
-  /* mobile viewport bug fix */
+  height: 100vh;
+  border:10px solid rebeccapurple;
+  overflow: hidden;
+ 
   min-height: -webkit-fill-available;
 }
 
-html {
+/* html {
   height: -webkit-fill-available;
-}
+} */
 
 *,
 *::before,
