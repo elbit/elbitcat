@@ -1,21 +1,25 @@
 <template>
-  <div class="">
-    <Header />
-    <Nuxt />
+  <div>
+    <div class="header-container">
+      <Header />
+    </div>
+    <div class="content-container">
+      <Nuxt />
+    </div>
   </div>
 </template>
 
 <style>
 html {
-/* font-display:  subpixel-antialiased; */
-/* font-smooth: antialiased; */
-font-family: 'Roboto',sans-serif;
-font-weight: 100;
+  /* font-display:  subpixel-antialiased; */
+  /* font-smooth: antialiased; */
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
 }
 
 body {
   height: 100vh;
-  border:1px solid rebeccapurple;
+  border: 1px solid rebeccapurple;
   /* overflow: hidden; */
   height: -webkit-fill-available;
 }
@@ -31,22 +35,10 @@ html {
   margin: 0;
 }
 
-img, svg {
-  max-width:100%;
+img,
+svg {
+  max-width: 100%;
   /* max-height: 100%; */
 }
-.page-container {
-    padding: 2rem;
-    padding-top:0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    /* max-width: 1300px; */
-    /* max-width: clamp(80%, 50vw, 1900px); */
-    margin: 0 auto;
-    /* position: relative; */
-  }
-
 
 </style>

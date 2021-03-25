@@ -15,34 +15,28 @@
       
     </div> -->
   <div class="cardbase">
-    <div
-      class="card"
-      v-for="post of pro"
-      :key="post.slug"
-     
-    >
-      <h1>{{ post.title }}</h1>
+    <div class="card" v-for="post of pro" :key="post.slug">
+      <div class="card-header">
+        <h1>{{ post.title }}</h1>
+      </div>
 
       <div class="img-wrapper" :class="post.padding">
         <img :src="require(`~/assets/img/proyectos/${post.img}`)" alt="{{}}" />
       </div>
-    <div class="card-content">
-      <!-- <Categories :pro="projectes" /> -->
-      <ul class="categories">
-        <li
-          v-for="category of post.categories"
-          :key="category.slug"
-          :class="category"
-        >
-          {{ category }}
-        </li>
-        
-        
-      </ul>
-      <a class="info" href=""  @click.prevent="emitMethod(post)" >més info</a>
 
-      
-    </div>
+      <div class="card-content">
+        <!-- <Categories :pro="projectes" /> -->
+        <ul class="categories">
+          <li
+            v-for="category of post.categories"
+            :key="category.slug"
+            :class="category"
+          >
+            {{ category }}
+          </li>
+        </ul>
+        <a class="info" href="" @click.prevent="emitMethod(post)">més info</a>
+      </div>
       <!-- <a  class="project-website" :href="post.url" target="_blank">{{post.url}}</a> -->
 
       <!-- <nuxt-content :document="post" /> -->
@@ -84,13 +78,14 @@ export default {
   /* flex-wrap: wrap; */
   overflow-x: auto;
   overflow-y: hidden;
-  borxder: 1px solid green;
+  border: 10px solid fuchsia;
   display: flex;
   /* height: 80vh; */
-  padding-bottom: 2rem;
+  padding-bottom: 1vh;
   padding-left: 2rem;
-  padding-top: 5vh;
+  padding-top: 4vh;
   padding-right: 4rem;
+  height:100%;
 }
 /* .cardbase:last-child {
   margin-right:3rem;
@@ -103,6 +98,7 @@ export default {
   transition: all 0.5s;
   display: inline-block;
   margin-right: 2rem;
+  height: 100%;
 }
 
 /* .card:last-child{
@@ -110,15 +106,23 @@ export default {
   margin-right:1000px;
  
 } */
-
+.card-header {
+  height: 7vh;
+}
 .card-content {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   margin-top: 1rem;
-  /* height: 5vh; */
-
+  height: 5vh;
 }
-
+.img-wrapper {
+  background: #dcdcdc;
+  height: 53vh;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .card h1 {
   font-family: 'Major Mono Display', monospace;
@@ -134,32 +138,21 @@ export default {
   font-size: clamp(1rem, 1.8vw, 3rem);
 }
 
-.img-wrapper {
-  background: #dcdcdc;
-  /* padding:5rem 3rem; */
-  /* width:40%;
-  height:30%; */
-  height: 55vh;
-  padding: 1rem; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 img {
   max-width: 100%;
   /* -webkit-filter: drop-shadow(5px 5px 10px rgb(51, 51, 51)); */
   transition: all 0.5s;
   max-height: 100%;
-  margin:0 auto;
+  margin: 0 auto;
 }
-
 
 .padding-h {
   padding-left: 4rem;
   padding-right: 4rem;
 }
-.padding-v{
+.padding-v {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
@@ -177,9 +170,9 @@ img {
 }
 
 .categories {
- 
 }
-.categories li, .info {
+.categories li,
+.info {
   padding: 0.1rem 0.3rem;
   font-family: 'Major Mono Display', monospace;
   font-size: 0.7rem;
@@ -195,7 +188,7 @@ img {
   line-height: 1;
 } */
 
-.info  {
+.info {
   border: 1px solid #333;
 }
 /* .project-website {
@@ -219,18 +212,19 @@ img {
     width: 75vw;
     max-width: 75vw;
     min-width: 75vw;
-    max-height: 64vh;
+    /* max-height: 64vh; */
   }
 
   .img-wrapper {
-  
-  height: 47vh;
-  padding: 1rem; 
-
+    height: 45vh;
+    padding: 1rem;
+  }
+  .card h1 {
+    font-size: 5vw;
+  }
 }
-}
 
-  @media (min-height: 768px) {
+@media (min-height: 768px) {
   .cardbase {
     height: 80vh;
   }
@@ -238,7 +232,7 @@ img {
     width: 800px;
     max-width: 800px;
     min-width: 800px;
-    background-color:seashell;
+    background-color: seashell;
   }
 }
 </style>

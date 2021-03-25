@@ -53,7 +53,7 @@ export default {
   padding: 0 2rem;
   flex-wrap: nowrap;
   width: 100%;
-  boxrder: solid 1px green;
+  border: solid 1px green;
   background-color: white;
   top: 0;
   height: 15vh; /* 15 +6  */

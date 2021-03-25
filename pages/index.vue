@@ -23,7 +23,7 @@ export default {
 
 <style>
 .cards-wrapper {
-  borxder: solid 1px red;
+  border: solid 5px red;
   /* margin-top:19vh; */
   width:auto;
   overflow-x: auto;
