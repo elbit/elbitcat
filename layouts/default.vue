@@ -13,6 +13,16 @@ font-family: 'Roboto',sans-serif;
 font-weight: 100;
 }
 
+body {
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
 *,
 *::before,
 *::after {
