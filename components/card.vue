@@ -78,7 +78,7 @@ export default {
   /* flex-wrap: wrap; */
   overflow-x: auto;
   overflow-y: hidden;
-  border: 10px solid fuchsia;
+  boxrder: 10px solid fuchsia;
   display: flex;
   /* height: 80vh; */
   padding-bottom: 1vh;
@@ -86,6 +86,7 @@ export default {
   padding-top: 4vh;
   padding-right: 4rem;
   height:100%;
+  max-height: -webkit-fill-available;
 }
 /* .cardbase:last-child {
   margin-right:3rem;
@@ -98,7 +99,7 @@ export default {
   transition: all 0.5s;
   display: inline-block;
   margin-right: 2rem;
-  height: 100%;
+  height: 95%;
 }
 
 /* .card:last-child{
@@ -107,17 +108,17 @@ export default {
  
 } */
 .card-header {
-  height: 7vh;
+  height: 10%;
 }
 .card-content {
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
-  height: 5vh;
+  height: 10%;
 }
 .img-wrapper {
   background: #dcdcdc;
-  height: 53vh;
+  height: 80%;
   padding: 1rem;
   display: flex;
   justify-content: center;

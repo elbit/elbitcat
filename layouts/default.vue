@@ -19,7 +19,7 @@ html {
 
 body {
   height: 100vh;
-  border: 1px solid rebeccapurple;
+  border: 10px solid rebeccapurple;
   /* overflow: hidden; */
   height: -webkit-fill-available;
 }
