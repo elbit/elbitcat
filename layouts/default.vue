@@ -20,6 +20,9 @@ html {
 body {
   height: 100vh;
   border: 10px solid rebeccapurple;
+  position:absolute;
+  width: 100%;
+
   /* overflow: hidden; */
   height: -webkit-fill-available;
 }

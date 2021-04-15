@@ -86,8 +86,8 @@ export default {
   padding-top: 4vh;
   padding-right: 4rem;
   height:100%;
-  position:fixed;
-  bottom:0;
+  /* position:fixed;
+  bottom:0; */
   max-height: -webkit-fill-available;
 }
 /* .cardbase:last-child {
