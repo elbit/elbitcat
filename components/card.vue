@@ -32,7 +32,7 @@
             :key="category.slug"
             :class="category"
           >
-            {{ category|1}}
+            {{ category}}
           </li>
         </ul>
         <a class="info" href="" @click.prevent="emitMethod(post)">més info</a>

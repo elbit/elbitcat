@@ -9,6 +9,11 @@
   </div>
 </template>
 
+<script>
+
+</script>
+
+
 <style>
 html {
   /* font-display:  subpixel-antialiased; */
@@ -18,13 +23,15 @@ html {
 }
 
 body {
-  height: 100%;
+  /* height: 100%; */
   border: 4px solid rebeccapurple;
-  position:absolute;
+  /* position:absolute; */
   width: 100%;
 
   /* overflow: hidden; */
-  height: -webkit-fill-available;
+  /* height: -webkit-fill-available;
+  height: 100vh; */
+  height: var(--app-height);
 }
 
 html {
