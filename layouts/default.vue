@@ -19,7 +19,7 @@ html {
 
 body {
   height: 100vh;
-  border: 10px solid rebeccapurple;
+  boxrder: 5px solid rebeccapurple;
   position:absolute;
   width: 100%;
 

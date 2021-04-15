@@ -28,11 +28,11 @@
         <!-- <Categories :pro="projectes" /> -->
         <ul class="categories">
           <li
-            v-for="category of post.categories"
+            v-for="category of post.categories.slice(0, 2)"
             :key="category.slug"
             :class="category"
           >
-            {{ category }}
+            {{ category|1}}
           </li>
         </ul>
         <a class="info" href="" @click.prevent="emitMethod(post)">més info</a>
@@ -78,7 +78,7 @@ export default {
   /* flex-wrap: wrap; */
   overflow-x: auto;
   overflow-y: hidden;
-  border: 10px solid fuchsia;
+  boxrder: 10px solid fuchsia;
   display: flex;
   /* height: 80vh; */
   padding-bottom: 1vh;
@@ -101,7 +101,7 @@ export default {
   transition: all 0.5s;
   display: inline-block;
   margin-right: 2rem;
-  height: 95%;
+  height: 100%;
 }
 
 /* .card:last-child{
@@ -117,6 +117,7 @@ export default {
   justify-content: space-between;
   margin-top: 1rem;
   height: 10%;
+  boxrder: hotpink 4px solid;
 }
 .img-wrapper {
   background: #dcdcdc;
@@ -125,6 +126,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+   boxrder: royalblue 4px solid;
 }
 
 .card h1 {

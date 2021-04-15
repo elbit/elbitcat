@@ -5,7 +5,7 @@ description: atrium viladecans moletes actuacions ammet
 img: atrium.png
 alt: my first blog post
 speech: Troba l'espectacle que més t'agradarà. 
-categories: [wordpress,tailwind,disseny]
+categories: [wordpress,disseny,desenvolupament]
 url: https://atriumviladecans.com
 
 ---

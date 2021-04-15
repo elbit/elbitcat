@@ -23,7 +23,7 @@ export default {
 
 <style>
 .cards-wrapper {
-  boxrder: solid 5px red;
+  boxrder: solid 10px green;
   /* margin-top:19vh; */
   width:auto;
   overflow-x: auto;
