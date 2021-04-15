@@ -18,8 +18,8 @@ html {
 }
 
 body {
-  height: 100vh;
-  boxrder: 5px solid rebeccapurple;
+  height: 100%;
+  border: 4px solid rebeccapurple;
   position:absolute;
   width: 100%;
 
