@@ -78,7 +78,7 @@ export default {
   /* flex-wrap: wrap; */
   overflow-x: auto;
   overflow-y: hidden;
-  boxrder: 10px solid fuchsia;
+  border: 10px solid fuchsia;
   display: flex;
   /* height: 80vh; */
   padding-bottom: 1vh;
@@ -86,6 +86,8 @@ export default {
   padding-top: 4vh;
   padding-right: 4rem;
   height:100%;
+  position:fixed;
+  bottom:0;
   max-height: -webkit-fill-available;
 }
 /* .cardbase:last-child {
