@@ -4,7 +4,7 @@ description: teknecultura
 img: basi.png
 padding: padding-v
 speech: Amb aquesta feina, hem perdut la por al dentista.
-url: https://clinincadentalbasi.es
+url: https://clinicadentalbasi.es
 categories: [wordpress, xarxes, marqueting digital]
 
 ---
