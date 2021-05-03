@@ -101,7 +101,7 @@ export default {
   transition: all 0.5s;
   display: inline-block;
   margin-right: 2rem;
-  height: 100%;
+  height: 97%;
 }
 
 /* .card:last-child{

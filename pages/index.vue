@@ -1,6 +1,6 @@
 <template>
   
-    <div class="cards-wrapper">
+    <div class="cards-wrapper" :class="{blur: isSpeaking}">
       <Card :pro="projectes" /> 
     </div>
   
@@ -8,8 +8,11 @@
 
 <script>
 
+import EventBus from '../components/global/event-bus';
+
 export default {
 
+  
   async asyncData({ $content, params }) {
     const projectes = await $content('projectes', params.slug).fetch();
     
@@ -17,13 +20,40 @@ export default {
       projectes,
     };
   },
+  data() {
+    return {
+      
+      isSpeaking: false,
+    }
+  },
+  mounted() {
+    EventBus.$on('EVENT_NAME', (data) => {
+      
+      this.isSpeaking = true
+     
+      // this.key++
+    }),
+     EventBus.$on('bubbleClosed', (data) => {
+      
+      this.isSpeaking = false
+    
+     
+      // this.key++
+    })
+    // EventBus.$on("reset", () => {
+    //   Object.assign(this.$data, this.$options.data()); //https://stackoverflow.com/questions/35604987/is-there-a-proper-way-of-resetting-a-components-initial-data-in-vuejs
+
+    // });
+  },
 };
+
+
 
 </script>
 
 <style>
 .cards-wrapper {
-  boxrder: solid 10px green;
+  borxder: solid 10px green;
   /* margin-top:19vh; */
   width:auto;
   overflow-x: auto;
@@ -36,5 +66,9 @@ export default {
     /* margin-top:30vh; */
     height: 70vh; 
   } 
+}
+
+.blur {
+  filter: blur(10px);
 }
 </style>
