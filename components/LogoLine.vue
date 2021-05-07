@@ -16,7 +16,7 @@
                     <tspan x="2.50830045" y="191.5">elbit.cat</tspan>
                 </text>
             </g>
-            <path d="M354,90 L296,114" id="Path-2" stroke="#C0C0C0"></path>
+            <path d="M354,90 L296,114" id="Path-2" stroke="#333"></path>
         </g>
     </g>
 </svg>
@@ -33,7 +33,7 @@
 
 @media (max-width: 768px) {
  svg {
-    max-width: 90px;
+    max-width: 100%;
   }
 }
 

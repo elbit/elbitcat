@@ -33,6 +33,12 @@ body {
   height: 100vh; */
   height: var(--app-height);
 }
+@media (max-width: 768px) {
+  body {
+    height: auto;
+    border: 4px solid forestgreen;
+  }
+}
 
 html {
   height: -webkit-fill-available;

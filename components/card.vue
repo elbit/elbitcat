@@ -28,14 +28,15 @@
         <!-- <Categories :pro="projectes" /> -->
         <ul class="categories">
           <li
-            v-for="category of post.categories.slice(0, 2)"
+            v-for="category of post.categories.slice(0, 3)"
             :key="category.slug"
             :class="category"
           >
             {{ category}}
           </li>
         </ul>
-        <a class="info" href="" @click.prevent="emitMethod(post)">més info</a>
+        <div><a class="info" href="" @click.prevent="emitMethod(post)">més info</a></div>
+        
       </div>
       <!-- <a  class="project-website" :href="post.url" target="_blank">{{post.url}}</a> -->
 
@@ -94,7 +95,7 @@ export default {
   margin-right:3rem;
   } */
 .card {
-  border: solid silver 1px;
+  border: solid #333 1px;
   width: 1000px;
   min-width: 500px;
   padding: 0.5rem;
@@ -212,12 +213,15 @@ img {
     borxder: 5px solid green;
 
     padding: 2vh;
+    display: block;
+    width: 100%;;
   }
   .card {
-    width: 75vw;
-    max-width: 75vw;
-    min-width: 75vw;
-    /* max-height: 64vh; */
+    /* width: 75vw; */
+    max-width: 100%;
+    margin-bottom: 4rem;
+    /* min-width: 75vw;
+    max-height: 64vh; */
   }
 
   .img-wrapper {
@@ -229,7 +233,7 @@ img {
   }
 }
 
-@media (min-height: 768px) {
+@media (min-width: 769px) and (min-height: 768px) {
   .cardbase {
     height: 80vh;
   }

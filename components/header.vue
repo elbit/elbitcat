@@ -4,7 +4,7 @@
        <Logo-line />   
     </div>
     <div class="b-wrapper">
-      <Bubble  :url="post.url" :dataspeech="post.speech" :strings="post.speech" :home="home" />
+      <Bubble  :url="post.url" :dataspeech="post.speech" :strings="post.speech" :home="home" :img="post.img" />
       
     </div>
   </div>
@@ -71,23 +71,26 @@ export default {
 
 @media (max-width: 768px) {
   .header {
-    height: 30vh;
+    height: 100vh;
     margin: 0;
-    borxder:lightseagreen solid 1px;
+    border:lightseagreen solid 4px;
     flex-direction: column-reverse;
-    flex-wrap:  wrap;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
     padding:0;
     margin: 0 3vw;
   }
   .logo-wrapper {
-    width: 93vw;
+    width: 100%;
     max-width: 100%;
-    borxder:violet solid 1px;
-    height:10vh;
+    border:violet solid 1px;
+    height:30vh;
   }
   .b-wrapper {
-  width: 93vw;
-  height: 17vh;
+  width: 100%;
+  height: 69vh;
+  border:tomato 1px solid;
   
   } 
 }

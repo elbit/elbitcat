@@ -20,14 +20,14 @@
   <div class="bubble-container">
     <div class="bubble-line"></div>
 
-    <div class="bubble" :class="{speaking: isSpeaking, colorBG}" vx-click-outside="ifOnClickOutside">
+    <div class="bubble" :class="{speaking: isSpeaking, colorBG}" >
       <vue-typed-js :strings="[dataspeech]" :key="dataspeech" :typeSpeed="10">
         
         <div>
-          
             <span class="text typing"></span> <br>
             <span v-if="home" @click="pricesdata()" class="link">Preus</span>
             <span v-if="!home" ><a class="link" target="blank" :href="url">{{url}} </a> |</span>
+           
             
             <!-- <span v-if="!home"   class="link">
                <NuxtLink to="/" >Qué més necessites?</NuxtLink>
@@ -36,7 +36,14 @@
         </div> 
         
       </vue-typed-js>
+      <div class="bubble-project">
 
+            <div class="bubble-project_img"><img :src="dogImage" alt="{{}}" /></div>
+           
+           <p class="bubble-project_copy">Lorem-content</p>
+
+           
+            </div>
       <!-- <Categories /> -->
     </div>
   </div>
@@ -44,7 +51,7 @@
 
 <script>
 import EventBus from '../components/global/event-bus';
-import vClickOutside from 'v-click-outside'
+// import vClickOutside from 'v-click-outside'
 
 export default {
   data() {
@@ -54,22 +61,22 @@ export default {
       isSpeaking: false,
       eventBus: false,
       menu: 'contacte',
-      colorBG:'red'
-
-      //dataspeech: { default: 'default speech', type: String },
-      //speech: 'mmm'
-      // key: 0
+      colorBG:'red',
+      chosenName: '',
+      dataspeechAfter: ['Vols veure més projectes? pues ala a fer scrool lateral','aquest projecte esta molt be link', 'es una salsa o una crema?']
     }
   },
-  directives: {
-      clickOutside: vClickOutside.directive
-    },
+  // directives: {
+  //     clickOutside: vClickOutside.directive
+  //   },
   props: {
     dataspeech: { default: 'Hola, soc el bit! qué necessites?', type: String },
     strings: '',
     home: false,
     strings: '',
-    url:'',
+    url: '',
+    img: '',
+    description: ''
    
   },
   methods: {
@@ -85,7 +92,11 @@ export default {
             console.log('enga')
         },
     closeBubble(){
+      var chosenNumber = Math.floor(Math.random() * this.dataspeechAfter.length);
       this.isSpeaking = false
+      // this.dataspeech[1] = ["t'agradat aquest projecte? pues sino pots mirar els altres", "como dijo ferran adria esque un tomate"]
+      this.dataspeech = this.dataspeechAfter[chosenNumber];
+      // this.dataspeech = post.speechAfter
     },
     emitMethod(item) {
       // console.log('click3e')
@@ -118,6 +129,19 @@ export default {
 
     // });
   },
+  computed: {
+   
+    dogImage () {
+      if (!this.img) {
+        return
+      }
+
+      const fileName = this.img
+
+      return require(`../assets/img/proyectos/${fileName}`) // the module request
+    }
+  }
+  
 }
 </script>
 
@@ -137,7 +161,7 @@ export default {
  /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); */
 .bubble {
   position:relative;
-  border: 1px silver solid;
+  border: 1px #333 solid;
   padding: 0 0.5rem;
   color:#333;
   /* height: 40px; */
@@ -152,7 +176,9 @@ export default {
   align-items: center;
   text-align: center;
   line-height: 1.1;
+  transition: all .5s ease-in-out;
   /* margin-top:1vh; */
+  height: 100px;
 
 }
 
@@ -161,6 +187,9 @@ export default {
  
   align-items:flex-start;
   padding-top:2rem;
+  flex-direction: column;
+  
+box-shadow: 5px 500px 400px 400px rgba(247, 247, 247, 0.8);
 
 }
 
@@ -203,22 +232,61 @@ export default {
 .speaking {
   background: linear-gradient(90deg, #9be4ff, #daf1ec) no-repeat;
 	background-size: 0% ;
-	animation: gradient 2s ;
+  transition: all .3s ease-in-out;
+	/* animation: gradient 2s ; */
 }
-@keyframes gradient {
+
+.bubble-project_img {
+  max-width: 66%;
+}
+
+.bubble-project_img img {
+  height:0;
+  transition: all .3s ease-in-out;
+ 
+}
+.speaking .bubble-project_img img {
+  height:auto;
+  
+ 
+}
+.speaking .bubble-project_img{
+  height:90%;
+}
+
+
+/* @keyframes gradient {
 	
 	100% {
 		background-size: 100%;
 	}
   0% {
     background-size: 0%;}
-}
+} */
 
 .speaking {
-height: 90vh;
+height: 95vh;
 z-index: 2;
 background-color:white;
+padding: 1rem;
 
+}
+
+.bubble-project {
+  display:none;
+  height:100%;
+}
+
+.bubble-project_copy {
+  font-family: roboto;
+  font-size:18px;
+}
+
+.speaking .bubble-project  {
+  display:flex;
+  border:1px solid red;
+  width: 100%;
+  padding: 1rem;
 }
 
 button {
@@ -234,10 +302,16 @@ display:none
   background-color: pink;
   margin-bottom: 1rem;
   margin-right: 1rem;
-  padding:1rem;
+  padding:0.2rem 0.5rem;
 }
 
+@media (max-width: 768px) { 
 
+  .bubble {
+    height: 100%;
+  }
+
+}
 
 
 </style>
