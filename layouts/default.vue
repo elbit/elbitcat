@@ -24,7 +24,7 @@ html {
 
 body {
   /* height: 100%; */
-  border: 4px solid rebeccapurple;
+  boxrder: 4px solid rebeccapurple;
   /* position:absolute; */
   width: 100%;
 
