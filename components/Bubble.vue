@@ -39,11 +39,12 @@
           
         </div>
 
-         <button class="close-button" @click="closeBubble()" @click.prevent="emitMethod()">
-            tanca
-          </button>
+        
       
       </div>
+       <button class="close-button" @click="closeBubble()" @click.prevent="emitMethod()">
+            tanca
+          </button>
       <!-- <Categories /> -->
     </div>
   
@@ -249,7 +250,7 @@ export default {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  overflow: auto;
+ 
     
   // transition: all 0.6s ease-in-out;
   /* animation: gradient 2s ; */
@@ -269,6 +270,7 @@ export default {
     // border: 1px solid red;
     width: 100%;
     padding: 1rem;
+     overflow: auto;
   }
 
   .bubble-project_img  .img_active{
@@ -280,10 +282,10 @@ export default {
   .close-button {
     display: inline-block;
     position: absolute;
-    bottom: 0;
+    top: 0;
     right: 0;
     
-    margin-bottom: 1rem;
+    margin-top: 1rem;
     margin-right: 1rem;
     
   }
