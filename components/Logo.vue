@@ -31,6 +31,7 @@ svg {
  svg {
      margin: 0 auto;
      margin-top:5%;
+     max-height: 90%;
      }
 }
 @media (min-width: 769px) {
