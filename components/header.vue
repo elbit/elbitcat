@@ -71,7 +71,7 @@ export default {
 
 @media (max-width: 768px) {
   .header {
-    height: 100vh;
+    height: 100%;
     margin: 0;
     boxder:lightseagreen solid 4px;
     flex-direction: column-reverse;
