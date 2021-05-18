@@ -117,6 +117,7 @@ export default {
   .mobile_bubble {
     height: 15%;
     background-color: greenyellow;
+    box-shadow: 5px 5px 50px 10px skyblue;
     flex-direction: row;
      padding: 0.2rem 1rem;
 

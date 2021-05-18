@@ -101,7 +101,7 @@ export default {
   height:100%;
   /* position:fixed;
   bottom:0; */
-  max-height: -webkit-fill-available;
+  /* max-height: -webkit-fill-available; */
 }
 /* .cardbase:last-child {
   margin-right:3rem;
@@ -226,11 +226,12 @@ img {
 
     padding: 2vh;
     display: block;
-    width: 100%;;
+    width: 100%;
   }
   .card {
     /* width: 75vw; */
-    max-width: 100%;
+    width: 100%;
+    min-width: 100%;
     margin-bottom: 4rem;
     /* min-width: 75vw;
     max-height: 64vh; */
