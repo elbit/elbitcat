@@ -1,7 +1,7 @@
 <template>
  
     
-    <div class="bubble" :class="{ speaking: isSpeaking, colorBG }">
+    <div class="bubble" :class="{ speaking: isSpeaking, mobile_bubble: isClosed, colorBG }">
       
       <vue-typed-js :strings="[dataspeech]" :key="dataspeech" :typeSpeed="10">
         
@@ -17,7 +17,7 @@
 
       </vue-typed-js>
 
-      <button class="goto">Veure projectes</button>
+      <button class="goto" @click.prevent="closeBubbleMobile()">Veure projectes</button>
 
       <div class="bubble-project">
         
@@ -63,6 +63,7 @@ export default {
       tabs: ['Home', 'Posts', 'Archive'],
       isActive: true,
       isSpeaking: false,
+      isClosed: false,
       eventBus: false,
       menu: 'contacte',
       colorBG: 'red',
@@ -105,6 +106,11 @@ export default {
       // this.dataspeech[1] = ["t'agradat aquest projecte? pues sino pots mirar els altres", "como dijo ferran adria esque un tomate"]
       this.dataspeech = this.dataspeechAfter[chosenNumber]
       // this.dataspeech = post.speechAfter
+    },
+    closeBubbleMobile(){
+        // this.isClosed = !this.isClosed;
+        console.log('yeah');
+        EventBus.$emit('bubbleMobileClosed')
     },
     emitMethod(item) {
       // console.log('click3e')
@@ -176,6 +182,7 @@ export default {
     height:100%;
     // background-color: red;
     font-size: 3rem;
+    
   }
  
   &-message {
@@ -317,5 +324,7 @@ export default {
   display: block;
 }
   }
+
+
 
 </style>

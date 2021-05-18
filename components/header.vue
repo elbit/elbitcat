@@ -1,5 +1,5 @@
  <template>
-  <div class="header">
+  <div class="header" :class="{mobile_bubble: isClosed}">
     <div class="logo-wrapper" @click="resetFields()">
        <Logo-line />
        <Logo />      
@@ -18,14 +18,19 @@ export default {
     return {
       strings: 'Hola, soc el bit ! qué necessites?<br> <a @click.prevent="console.log(`menu`)" class="link" href="/"> Contacte</a> / <a class="link" href="/"> Preus</a> / <a class="link" href="/"> Freelance</a> ',
       home: true,
-      post:[]
+      post:[],
+      isClosed: false
     }
   },
   mounted() {
     EventBus.$on('EVENT_NAME', (data) => {
       this.post = data
       this.home = false
-    })
+    }) ,
+    EventBus.$on('bubbleMobileClosed', (data) => {
+      this.isClosed = !this.isClosed
+     
+    }) 
     // EventBus.$on("reset", () => {
     //   Object.assign(this.$data, this.$options.data()); //https://stackoverflow.com/questions/35604987/is-there-a-proper-way-of-resetting-a-components-initial-data-in-vuejs
 
@@ -81,6 +86,7 @@ export default {
     padding:1rem;
     margin: 0;
     position:fixed;
+    transition:all 1s;
   }
   .logo-wrapper {
     width: 100%;
@@ -98,5 +104,12 @@ export default {
   .Logo-line {
      display:none;
    }
+
+  /* /// Stycky mobile header-bubble /// */
+   
+   .mobile_bubble {
+       height:20%;
+       background-color:greenyellow;
+    }
 }
 </style>
