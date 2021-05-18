@@ -1,11 +1,11 @@
  <template>
   <div class="header">
     <div class="logo-wrapper" @click="resetFields()">
-       <Logo-line />   
+       <Logo-line />
+       <Logo />      
     </div>
     <div class="b-wrapper">
-      <Bubble  :url="post.url" :dataspeech="post.speech" :strings="post.speech" :home="home" :img="post.img" />
-      
+      <Bubble  :url="post.url" :dataspeech="post.speech" :strings="post.speech" :home="home" :img="post.img" /> 
     </div>
   </div>
 </template>
@@ -73,25 +73,30 @@ export default {
   .header {
     height: 100vh;
     margin: 0;
-    border:lightseagreen solid 4px;
+    boxder:lightseagreen solid 4px;
     flex-direction: column-reverse;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    padding:0;
-    margin: 0 3vw;
+    padding:1rem;
+    margin: 0;
+    position:fixed;
   }
   .logo-wrapper {
     width: 100%;
     max-width: 100%;
-    border:violet solid 1px;
-    height:30vh;
+    borxder:violet solid 1px;
+    height:25%;
   }
   .b-wrapper {
   width: 100%;
-  height: 69vh;
-  border:tomato 1px solid;
-  
-  } 
+  height: 75%;
+  borxder:tomato 1px solid;
+  /* background-color:green; */
+   } 
+
+  .Logo-line {
+     display:none;
+   }
 }
 </style>

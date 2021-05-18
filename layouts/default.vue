@@ -36,7 +36,7 @@ body {
 @media (max-width: 768px) {
   body {
     height: auto;
-    border: 4px solid forestgreen;
+    /* border: 4px solid forestgreen; */
   }
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="bubble-container">
+ 
     
     <div class="bubble" :class="{ speaking: isSpeaking, colorBG }">
       
@@ -16,6 +16,8 @@
         </div>
 
       </vue-typed-js>
+
+      <button class="goto">Veure projectes</button>
 
       <div class="bubble-project">
         
@@ -48,7 +50,7 @@
       <!-- <Categories /> -->
     </div>
   
-  </div>
+  
 </template>
 
 <script>
@@ -168,6 +170,13 @@ export default {
   
   transition: all 0.3s ease-in-out;
   animation-direction: normal;
+
+  @media (max-width: 768px) { 
+
+    height:100%;
+    // background-color: red;
+    font-size: 3rem;
+  }
  
   &-message {
     text-align: center;
@@ -230,9 +239,7 @@ export default {
     padding: 0.2rem 0.5rem;
 
   }
-  @media (max-width: 768px) {
-    height: 100%;
-  }
+ 
 }
 
 ////Bubble project open
@@ -241,7 +248,7 @@ export default {
   z-index: 2;
   padding: 1rem;
   
-  box-shadow: 5px 60vh 300px 300px rgba(247, 247, 247, 0.8);
+  // box-shadow: 5px 60vh 300px 300px rgba(247, 247, 247, 0.8);
   background-color: white;
   //  background: linear-gradient(90deg, #9be4ff, #daf1ec) no-repeat;
   // background-size: 0%;
@@ -289,5 +296,26 @@ export default {
     margin-right: 1rem;
     
   }
+  
 }
+.head {
+     transform: perspective(1000px) rotateY(35deg);
+     transition: transform 1s ease 0s;
+  }
+
+.goto {
+ display:none;
+}
+@media (max-width: 768px) { 
+
+    .goto {
+  border: 1px solid black;
+  background-color: blueviolet;
+  position: absolute;
+  bottom: 0;
+  margin-bottom:2rem;
+  display: block;
+}
+  }
+
 </style>

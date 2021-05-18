@@ -1,5 +1,5 @@
 <template>
-  <svg class="logo" width="140px" height="102px" viewBox="0 0 140 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <svg class="logo" width="200px" height="200px" viewBox="0 0 140 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
     <desc>Created with Sketch.</desc>
     <defs></defs>
@@ -29,8 +29,14 @@ svg {
 
 @media (max-width: 768px) {
  svg {
-   max-height:10vh;
-  }
+     margin: 0 auto;
+     margin-top:5%;
+     }
+}
+@media (min-width: 769px) {
+ svg {
+     display: none;
+     }
 }
 
 </style>

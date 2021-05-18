@@ -14,7 +14,7 @@
 
       
     </div> -->
-  <div class="cardbase">
+  <div class="cardbase" :class="{ blur: isBlur}">
     <div class="card" v-for="post of pro" :key="post.slug">
       <div class="card-header">
         <h1>{{ post.title }}</h1>
@@ -35,7 +35,7 @@
             {{ category}}
           </li>
         </ul>
-        <div><a class="info" href="" @click.prevent="emitMethod(post)">més info</a></div>
+        <div><a class="info" href="" @click.prevent="emitMethod(post),isBlur=true"  >més info</a></div>
         
       </div>
       <!-- <a  class="project-website" :href="post.url" target="_blank">{{post.url}}</a> -->
@@ -52,6 +52,7 @@ export default {
   data() {
     return {
       //projectes: [],
+      isBlur: false
     }
   },
 
@@ -62,6 +63,17 @@ export default {
       // console.log('click3e')
       EventBus.$emit('EVENT_NAME', item)
     },
+  },
+   mounted() {
+    EventBus.$on('bubbleClosed', (data) => {
+     
+      (this.isBlur= false)
+    })
+
+    // EventBus.$on("reset", () => {
+    //   Object.assign(this.$data, this.$options.data()); //https://stackoverflow.com/questions/35604987/is-there-a-proper-way-of-resetting-a-components-initial-data-in-vuejs
+
+    // });
   },
   //  async fetch () {
   //   this.projectes = await this.$content('projectes').fetch();
@@ -243,6 +255,10 @@ img {
     min-width: 800px;
     background-color: seashell;
   }
+}
+
+.blur {
+  opacity: 0.3;
 }
 </style>
 
