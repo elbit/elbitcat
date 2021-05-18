@@ -211,6 +211,7 @@ export default {
     border-left: solid #333 1px;
     padding-left: 2rem;
     line-height: 1.5;
+    height: 100%;
     &-title {
       font-weight:bold;
       font-size: 1.5rem;
@@ -223,6 +224,7 @@ export default {
     flex-wrap: wrap;
     align-items: center;
     padding-right: 1rem;
+    // height: 100%;
     // transition: all 0.6s ease-in-out;
     div {
       width:50%;
@@ -292,8 +294,10 @@ export default {
      overflow: auto;
       @media (max-width: 768px) {  
         flex-direction: column;
+        display: block;
+        height:auto;
     
-  }
+    }
   }
 
   .bubble-project_img  .img_active{
