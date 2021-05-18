@@ -120,6 +120,8 @@ export default {
     box-shadow: 5px 5px 50px 10px skyblue;
     flex-direction: row;
      padding: 0.2rem 1rem;
+     position:fixed;
+     z-index: 2;
 
     .logo-wrapper {
       width:14%;

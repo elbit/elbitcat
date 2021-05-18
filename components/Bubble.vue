@@ -226,6 +226,10 @@ export default {
     // transition: all 0.6s ease-in-out;
     div {
       width:50%;
+       @media (max-width: 768px) {  
+         width:100%;
+    
+  }
       // border:1px solid red;
     }
   }
@@ -264,6 +268,7 @@ export default {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  
  
     
   // transition: all 0.6s ease-in-out;
@@ -285,6 +290,10 @@ export default {
     width: 100%;
     padding: 1rem;
      overflow: auto;
+      @media (max-width: 768px) {  
+        flex-direction: column;
+    
+  }
   }
 
   .bubble-project_img  .img_active{
@@ -303,6 +312,7 @@ export default {
     margin-right: 1rem;
     
   }
+  
   
 }
 .head {

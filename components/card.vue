@@ -99,6 +99,7 @@ export default {
   padding-top: 4vh;
   padding-right: 4rem;
   height:100%;
+  z-index:1;
   /* position:fixed;
   bottom:0; */
   /* max-height: -webkit-fill-available; */
@@ -115,6 +116,7 @@ export default {
   display: inline-block;
   margin-right: 2rem;
   height: 97%;
+  z-index:1;
 }
 
 /* .card:last-child{
