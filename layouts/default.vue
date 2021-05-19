@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="{ noscroll: isClosed }">
     <div class="header-container">
       <Header />
     </div>
@@ -57,4 +57,35 @@ svg {
   /* max-height: 100%; */
 }
 
+.noscroll  .cardbase{
+  overflow:hidden!important;
+  height:100vh!important;
+  background-color:green;
+}
+
 </style>
+<script>
+import EventBus from '../components/global/event-bus'
+
+export default { 
+  data() {
+    return {
+      isClosed: true,
+    }
+  },
+
+  mounted() {
+      EventBus.$on('bubbleMobileClosed', (data) => {
+        this.isClosed = !this.isClosed
+      })
+    // EventBus.$on("reset", () => {
+    //   Object.assign(this.$data, this.$options.data()); //https://stackoverflow.com/questions/35604987/is-there-a-proper-way-of-resetting-a-components-initial-data-in-vuejs
+
+    // });
+  },
+
+}
+
+
+
+</script>

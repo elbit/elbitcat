@@ -91,7 +91,8 @@ export default {
     align-items: center;
     padding: 1rem;
     margin: 0;
-    position: fixed;
+    position:fixed;
+    top:0;
     transition: all 1s;
   }
   .logo-wrapper {
