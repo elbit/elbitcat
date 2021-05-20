@@ -164,7 +164,7 @@ export default {
   color: #333;
   background-color: white;
 
-  font-family: 'VT323', monospace;
+  font-family: 'Roboto Mono', monospace;
   font-size: 1.4rem;
   font-size: calc(25px + 11 * ((100vw - 800px) / 2000));
   line-height: 1;
@@ -181,7 +181,11 @@ export default {
 
     height:100%;
     // background-color: red;
-    font-size: 3rem;
+    font-size: 2rem;
+    border:none;
+    justify-content: space-around;
+    align-items: space-between;
+    flex-direction: column;
     
   }
  
@@ -189,6 +193,7 @@ export default {
     text-align: center;
     width:100%;
     background-size:0%;
+    borxder: 1px solid teal;
     transition: all 1s ease-in-out;
   }
   .typed-element {
@@ -271,7 +276,6 @@ export default {
   align-items: flex-start;
   justify-content: flex-start;
   
- 
     
   // transition: all 0.6s ease-in-out;
   /* animation: gradient 2s ; */
@@ -331,11 +335,12 @@ export default {
 
     .goto {
   border: 1px solid black;
-  background-color: blueviolet;
-  position: absolute;
-  bottom: 0;
-  margin-bottom:2rem;
+  // background-color: blueviolet;
+
+  // bottom: 0;
+  // margin-bottom:2rem;
   display: block;
+  padding:0.5rem;
 }
   }
 

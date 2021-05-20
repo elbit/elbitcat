@@ -85,9 +85,9 @@ export default {
     height: 100%;
     margin: 0;
     boxder: lightseagreen solid 4px;
-    flex-direction: column-reverse;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: center;
     padding: 1rem;
     margin: 0;
@@ -99,12 +99,13 @@ export default {
     width: 100%;
     max-width: 100%;
     borxder: violet solid 1px;
-    height: 25%;
+    height: 30%;
   }
   .b-wrapper {
     width: 100%;
-    height: 75%;
+    height: 70%;
     borxder: tomato 1px solid;
+    
     /* background-color:green; */
   }
 
