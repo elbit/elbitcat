@@ -17,6 +17,7 @@
             </span> -->
       </div>
     </vue-typed-js>
+
     <div class="button-nav">
       <button class="goto" @click.prevent="closeBubbleMobile()">
         veure projectes
@@ -111,7 +112,7 @@ export default {
   //     clickOutside: vClickOutside.directive
   //   },
   props: {
-    dataspeech: { default: 'Hola, soc el bit! qué necessites?', type: String },
+    dataspeech: { default: 'Hola,soc el bit!<br>qué necessites?', type: String },
     strings: '',
     home: false,
     strings: '',
@@ -211,11 +212,15 @@ export default {
     height: 100%;
     // background-color: red;
     font-size: 1.8rem;
-    font-weight:100;
+    font-weight:200;
     border: none;
     justify-content: space-around;
-    align-items: space-between;
+    align-items: center;
     flex-direction: column;
+    width: 100%;
+    borxder: 1px solid pink;
+    
+
   }
 
   &-message {
@@ -224,6 +229,10 @@ export default {
     background-size: 0%;
     borxder: 1px solid teal;
     transition: all 1s ease-in-out;
+    
+    @media (max-width: 768px) {
+      line-height:1.2;
+    } 
   }
   .typed-element {
     width: 100%;
@@ -377,7 +386,7 @@ export default {
     
   }
   .button-nav {
-    width:75%;
+    width:100%;
     font-size: 1.5rem;
     
   }
