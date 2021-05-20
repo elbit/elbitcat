@@ -19,12 +19,12 @@
     </vue-typed-js>
     <div class="button-nav">
       <button class="goto" @click.prevent="closeBubbleMobile()">
-        Veure projectes
+        veure projectes
       </button>
       <button class="goto" @click.prevent="closeBubbleMobile()">
-        Contacte
+        contacte
       </button>
-      <button class="goto" @click.prevent="closeBubbleMobile()">Serveis</button>
+      <button class="goto" @click.prevent="closeBubbleMobile()">serveis</button>
     </div>
 
     <div class="bubble-project">
@@ -210,7 +210,8 @@ export default {
   @media (max-width: 768px) {
     height: 100%;
     // background-color: red;
-    font-size: 2rem;
+    font-size: 1.8rem;
+    font-weight:100;
     border: none;
     justify-content: space-around;
     align-items: space-between;
@@ -353,7 +354,7 @@ export default {
 }
 @media (max-width: 768px) {
   .goto {
-    border: 1px solid black;
+    borxder: 1px solid black;
     // background-color: blueviolet;
 
     // bottom: 0;
@@ -361,9 +362,24 @@ export default {
     display: block;
     padding: 0.5rem;
     width: 100%;
+    font-weight:100;
+    margin-bottom:5px;
+    font-family: 'Major Mono Display', monospace;
+    &:nth-child(1) {
+      background-color: #98CBF9;
+    }
+    &:nth-child(2) {
+      background-color: #B2E3D8;
+    }
+    &:nth-child(3) {
+      background-color: #FFADB6;
+    }
+    
   }
   .button-nav {
     width:75%;
+    font-size: 1.5rem;
+    
   }
 }
 </style>

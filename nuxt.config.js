@@ -18,7 +18,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       // { rel: 'stylesheet', type: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css' }
       {rel: 'preconnect', href:'https://fonts.gstatic.com'},
-      {rel: 'stylesheet', href:'https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Roboto:wght@200&family=VT323&family=Press+Start+2P&family=Roboto+Mono&display=swap'}
+      {rel: 'stylesheet', href:'https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Roboto:wght@200&family=VT323&family=Press+Start+2P&family=Roboto+Mono:wght@100;312&display=swap'}
     ]
   },
 
