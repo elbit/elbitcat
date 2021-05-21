@@ -21,7 +21,16 @@
       </div>
 
       <div class="img-wrapper" :class="post.padding">
-        <img :src="require(`~/assets/img/proyectos/${post.img}`)" alt="{{}}" />
+        <!-- <img :src="require(`~/assets/img/proyectos/${post.img[0]}`)" alt="{{}}" /> -->
+        <img
+            v-for="imgs of post.img.slice(0,1)"
+            :key="imgs.slug"
+            
+            :src="imgs"
+          >
+         
+            
+          
       </div>
 
       <div class="card-content">
@@ -157,7 +166,6 @@ export default {
   font-size: 1.8vw;
   font-size: clamp(1rem, 1.8vw, 3rem);
 }
-
 
 
 img {

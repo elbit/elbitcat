@@ -1,8 +1,8 @@
 ---
 title: Andrea Lovetere
 description: Andrea lovetere web dessing
-img: andrea.png
-img-project: andrea.png
+img: [andrea.png]
+img-project: [andrea.png]
 speech: Treballar per un gran dissenyador posa les coses molt fàcils!
 url: https://andrealovetere.com
 categories: [wordpress,tailwind,twig, desenvoupament]

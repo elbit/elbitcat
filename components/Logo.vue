@@ -12,9 +12,9 @@
                     <circle id="Oval-Copy" cx="73.5" cy="8.5" r="8.5"></circle>
                 </g>
                 <rect id="Rectangle-2" fill="#D8D8D8" x="48" y="65" width="48" height="6"></rect>
-                <text id="elbit.cat" font-family="MajorMonoDisplay-Regular, Major Mono Display" font-size="21" font-weight="normal" letter-spacing="0.362599909" fill="#000000">
+                <!-- <text id="elbit.cat" font-family="MajorMonoDisplay-Regular, Major Mono Display" font-size="21" font-weight="normal" letter-spacing="0.362599909" fill="#000000">
                     <tspan x="0.438300408" y="101">elbit.cat</tspan>
-                </text>
+                </text> -->
             </g>
         </g>
     </g>

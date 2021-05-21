@@ -29,8 +29,18 @@
     </div>
 
     <div class="bubble-project">
+      <!-- <img
+            v-for="imgs of post.img.slice(0,1)"
+            :key="imgs.slug"
+            :class="{ img_active: isSpeaking, colorBG }"
+            :src="imgs"
+          > -->
+
       <div class="bubble-project_img">
-        <div>
+        <div v-for="imgs of img" :key="imgs.slug">
+          <img :class="{ img_active: isSpeaking }" :src="imgs" />
+        </div>
+        <!-- <div>
           <img
             :class="{ img_active: isSpeaking, colorBG }"
             :src="dogImage"
@@ -57,7 +67,7 @@
             :src="dogImage"
             alt="{{}}"
           />
-        </div>
+        </div> -->
       </div>
 
       <div class="bubble-project_copy">
@@ -112,12 +122,15 @@ export default {
   //     clickOutside: vClickOutside.directive
   //   },
   props: {
-    dataspeech: { default: 'Hola,soc el bit!<br>qué necessites?', type: String },
+    dataspeech: {
+      default: 'Hola,soc el Bit.cat!<br>Qué necessites?',
+      type: String,
+    },
     strings: '',
     home: false,
     strings: '',
     url: '',
-    img: '',
+    img: [],
     description: '',
   },
   methods: {
@@ -172,13 +185,14 @@ export default {
   },
   computed: {
     dogImage() {
-      if (!this.img) {
-        return
-      }
-
+      // if (!this.img) {
+      //   return
+      // }
       const fileName = this.img
 
-      return require(`../assets/img/proyectos/${fileName}`) // the module request
+      for (let i = 0; i < fileName.length; i++) {
+        require(`../assets/img/proyectos/${fileName[i]}`) // the module request
+      }
     },
   },
 }
@@ -197,9 +211,11 @@ export default {
   background-color: white;
 
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.4rem;
-  font-size: calc(25px + 11 * ((100vw - 800px) / 2000));
-  line-height: 1;
+  font-size: 1.3rem;
+  font-size: calc(20px + 11 * ((100vw - 800px) / 2000));
+  line-height: 1.2;
+  font-style: italic;
+  font-weight: 400;
 
   display: flex;
   justify-content: center;
@@ -211,16 +227,14 @@ export default {
   @media (max-width: 768px) {
     height: 100%;
     // background-color: red;
-    font-size: 1.8rem;
-    font-weight:200;
+    font-size: 2rem;
+    font-weight: 400;
     border: none;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
     width: 100%;
     borxder: 1px solid pink;
-    
-
   }
 
   &-message {
@@ -229,10 +243,10 @@ export default {
     background-size: 0%;
     borxder: 1px solid teal;
     transition: all 1s ease-in-out;
-    
+
     @media (max-width: 768px) {
-      line-height:1.2;
-    } 
+      line-height: 1.2;
+    }
   }
   .typed-element {
     width: 100%;
@@ -255,6 +269,7 @@ export default {
     padding-left: 2rem;
     line-height: 1.5;
     height: 100%;
+    margin-top:1rem;
     &-title {
       font-weight: bold;
       font-size: 1.5rem;
@@ -270,7 +285,15 @@ export default {
     // height: 100%;
     // transition: all 0.6s ease-in-out;
     div {
+      // background: #dcdcdc;
+      height: 50%;
+      // padding: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 50%;
+      borxder: royalblue 4px solid;
+
       @media (max-width: 768px) {
         width: 100%;
       }
@@ -285,6 +308,11 @@ export default {
     //  animation-direction: normal;
     transition-delay: 2s;
     opacity: 0;
+     max-height: 100% !important;
+     max-width: 100%;
+    margin: 0 auto;
+    borxder:fuchsia 1px solid;
+    
   }
 
   .close-button {
@@ -318,8 +346,8 @@ export default {
     text-align: center;
     // border: red solid 1px;
     width: 100%;
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
+    // margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
     border-bottom: 1px solid #333;
     background-size: 100%;
     // background: linear-gradient(90deg, #9be4ff, #daf1ec) no-repeat;
@@ -328,8 +356,9 @@ export default {
     display: flex;
     // border: 1px solid red;
     width: 100%;
-    padding: 1rem;
+    // padding: 1rem;
     overflow: auto;
+    
     @media (max-width: 768px) {
       flex-direction: column;
       display: block;
@@ -371,24 +400,22 @@ export default {
     display: block;
     padding: 0.5rem;
     width: 100%;
-    font-weight:100;
-    margin-bottom:5px;
+    font-weight: 100;
+    margin-bottom: 5px;
     font-family: 'Major Mono Display', monospace;
     &:nth-child(1) {
-      background-color: #98CBF9;
+      background-color: #98cbf9;
     }
     &:nth-child(2) {
-      background-color: #B2E3D8;
+      background-color: #b2e3d8;
     }
     &:nth-child(3) {
-      background-color: #FFADB6;
+      background-color: #ffadb6;
     }
-    
   }
   .button-nav {
-    width:100%;
+    width: 100%;
     font-size: 1.5rem;
-    
   }
 }
 </style>

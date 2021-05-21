@@ -1,8 +1,7 @@
 ---
 title: Atrium Viladecans
 description: atrium viladecans moletes actuacions ammet
- montesori
-img: atrium.png
+img: [scroll.gif,atrium3.png,atrium2.png,atrium1.png]
 alt: my first blog post
 speech: Troba l'espectacle que més t'agradarà. 
 categories: [wordpress,disseny,desenvolupament]

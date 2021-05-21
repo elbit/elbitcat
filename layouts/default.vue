@@ -38,6 +38,11 @@ body {
     height: auto;
     /* border: 4px solid forestgreen; */
   }
+  .noscroll  .cardbase{
+  overflow:hidden!important;
+  height:100vh!important;
+  background-color:green;
+}
 }
 
 html {
@@ -57,11 +62,7 @@ svg {
   /* max-height: 100%; */
 }
 
-.noscroll  .cardbase{
-  overflow:hidden!important;
-  height:100vh!important;
-  background-color:green;
-}
+
 
 </style>
 <script>
