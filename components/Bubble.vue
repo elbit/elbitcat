@@ -18,7 +18,7 @@
     </vue-typed-js>
       
     <div class="button-nav">
-      <button class="goto" @click.prevent="gotoProjects()">
+      <button class="goto goto-mobile-bubble " @click.prevent="gotoProjects()">
         veure projectes 
       </button>
       <button class="goto" @click.prevent="closeBubbleMobile()">
@@ -26,6 +26,7 @@
       </button>
       <button class="goto" @click.prevent="closeBubbleMobile()">serveis</button>
        <button class="goto" @click.prevent="closeBubbleMobile()">Modus operandi</button>
+       <button class="goto goto-mobile-bubble" @click.prevent="closeBubbleMobile()">menu</button>
     </div>
 
     <div class="bubble-project">
@@ -41,34 +42,7 @@
           <img :class="{ img_active: isSpeaking }" :src="imgs" />
         
         </div>
-        <!-- <div>
-          <img
-            :class="{ img_active: isSpeaking, colorBG }"
-            :src="dogImage"
-            alt="{{}}"
-          />
-        </div>
-        <div>
-          <img
-            :class="{ img_active: isSpeaking, colorBG }"
-            :src="dogImage"
-            alt="{{}}"
-          />
-        </div>
-        <div>
-          <img
-            :class="{ img_active: isSpeaking, colorBG }"
-            :src="dogImage"
-            alt="{{}}"
-          />
-        </div>
-        <div>
-          <img
-            :class="{ img_active: isSpeaking, colorBG }"
-            :src="dogImage"
-            alt="{{}}"
-          />
-        </div> -->
+       
       </div>
 
       <div class="bubble-project_copy">
@@ -76,7 +50,8 @@
         <h2 class="bubble-project_copy-title">{{ data.title }}</h2>
         <ul>
           <li>
-            {{ data.description }}
+            <!-- {{ data.description }} -->
+             <nuxt-content :document="data" />
           </li>
         </ul>
       </div>
@@ -370,6 +345,15 @@ export default {
       flex-direction: column;
       display: block;
       height: auto;
+
+      .bubble-project_img {
+        width: 100%;
+       
+        div {
+          margin-bottom: 2rem;
+        }
+      }
+
     }
   }
 
@@ -399,16 +383,12 @@ export default {
   transition: transform 1s ease 0s;
 }
 
-.goto {
-  display: none;
-}
+// .goto {
+//   display: none;
+// }
 @media (max-width: 768px) {
   .goto {
     borxder: 1px solid black;
-    // background-color: blueviolet;
-
-    // bottom: 0;
-    // margin-bottom:2rem;
     display: block;
     padding: 0.5rem;
     width: 100%;
@@ -426,6 +406,9 @@ export default {
     }
     &:nth-child(4) {
       background-color: yellowgreen;
+    }
+     &:nth-child(5) {
+      background-color: #ffadb6;
     }
   }
   .button-nav {

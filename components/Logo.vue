@@ -30,8 +30,8 @@ svg {
 @media (max-width: 768px) {
  svg {
      margin: 0 auto;
-     margin-top:5%;
-     max-height: 90%;
+     margin-top:1%;
+     max-height: 100%;
      }
 }
 @media (min-width: 769px) {

@@ -140,13 +140,13 @@ export default {
 
     .logo-wrapper {
       width: 100%;
-      height: 40%;
+      height: 50%;
       margin-right: 2%;
     }
     .b-wrapper {
       width: 100%;
       height: 50%;
-      border: 1px dashed gray;
+      //border: 1px dashed gray;
     }
 
     .bubble {
@@ -156,6 +156,8 @@ export default {
     .goto {
       display: none;
     }  
+
+   
     
   }
   //bubble opened
@@ -168,7 +170,8 @@ export default {
       
       .logo-wrapper {
         width:100%;
-        height: 150px;
+        height: 20vh;
+        // border: 1px solid red;
         //background-color:red;
       }
       .b-wrapper {
@@ -181,7 +184,7 @@ export default {
       .close-button {
         position:fixed!important;
         bottom: 0!important;
-        right: 1px!important;
+        right: 0!important;
         top:auto!important;
         width: 50%;
 
@@ -192,6 +195,11 @@ export default {
          overflow: auto;
          position:relative!important;
       }
+
+       .goto-mobile-bubble {
+      display: inline-block;
+      width: 47%;
+    }
   }
 }
 </style>
