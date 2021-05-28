@@ -174,13 +174,21 @@ export default {
         height:auto;
         overflow:auto;
       }
+
+      //ATENCIO .speaking is overridint specificity
       .close-button {
         position:fixed!important;
+        bottom: 0!important;
+        right: 1px!important;
+        top:auto!important;
+        width: 50%;
+
       }
 
       .bubble {
          height: auto;
          overflow: auto;
+         position:relative!important;
       }
   }
 }
