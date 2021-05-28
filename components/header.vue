@@ -43,7 +43,7 @@ export default {
       (this.isOpen = !this.isOpen);
       console.log('hsokd')
     }),
-    EventBus.$on('bubbleMobileClosed', (data) => {
+    EventBus.$on('gotoProjects', (data) => {
         this.isClosed = !this.isClosed
       })
     // EventBus.$on("reset", () => {
@@ -130,21 +130,23 @@ export default {
   /////////////////////////////////// */
 
   .mobile_bubble {
-    height: 15%;
-    background-color: greenyellow;
+    height: 20%;
+    //background-color: greenyellow;
     //box-shadow: 5px 5px 50px 10px skyblue;
-    flex-direction: row;
+    flex-direction: column;
     padding: 0.2rem 1rem;
     position: fixed;
     z-index: 2;
 
     .logo-wrapper {
-      width: 14%;
-      height: 100%;
+      width: 100%;
+      height: 40%;
       margin-right: 2%;
     }
     .b-wrapper {
-      width: 84%;
+      width: 100%;
+      height: 50%;
+      border: 1px dashed gray;
     }
 
     .bubble {

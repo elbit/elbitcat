@@ -18,13 +18,14 @@
     </vue-typed-js>
       
     <div class="button-nav">
-      <button class="goto" @click.prevent="closeBubbleMobile()">
+      <button class="goto" @click.prevent="gotoProjects()">
         veure projectes 
       </button>
       <button class="goto" @click.prevent="closeBubbleMobile()">
         contacte
       </button>
       <button class="goto" @click.prevent="closeBubbleMobile()">serveis</button>
+       <button class="goto" @click.prevent="closeBubbleMobile()">Modus operandi</button>
     </div>
 
     <div class="bubble-project">
@@ -110,6 +111,7 @@ export default {
         'Vols veure més projectes? pues ala a fer scrool lateral',
         'aquest projecte esta molt be link',
         'es una salsa o una crema?',
+        'mooooooviiiierecords, piiipipipi pi'
       ],
       
     }
@@ -153,11 +155,9 @@ export default {
       this.dataspeech = this.dataspeechAfter[chosenNumber]
       // this.dataspeech = post.speechAfter
     },
-    closeBubbleMobile() {
-      // this.isClosed = !this.isClosed;
-      console.log('yeah')
-      EventBus.$emit('bubbleMobileClosed')
-      this.dataspeech = 'quins projectes OMG!'
+    gotoProjects() {
+      EventBus.$emit('gotoProjects')
+      this.dataspeech = 'Quins projectes OMG!'
     },
     emitMethod(item) {
       // console.log('click3e')
@@ -423,6 +423,9 @@ export default {
     }
     &:nth-child(3) {
       background-color: #ffadb6;
+    }
+    &:nth-child(4) {
+      background-color: yellowgreen;
     }
   }
   .button-nav {
