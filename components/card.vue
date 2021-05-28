@@ -14,7 +14,7 @@
 
       
     </div> -->
-  <div class="cardbase" :class="{ blur: isBlur}">
+  <div class="cardbase" :class="{ blur: isBlur,hidden: hideBack }" >
     <div class="card" v-for="post of pro" :key="post.slug">
       <div class="card-header">
         <h1>{{ post.title }}</h1>
@@ -25,12 +25,9 @@
         <img
             v-for="imgs of post.img.slice(0,1)"
             :key="imgs.slug"
-            
             :src="imgs"
           >
-         
-            
-          
+     
       </div>
 
       <div class="card-content">
@@ -61,7 +58,8 @@ export default {
   data() {
     return {
       //projectes: [],
-      isBlur: false
+      isBlur: false,
+      hideBack: false
     }
   },
 
@@ -71,12 +69,13 @@ export default {
     emitMethod(item) {
       // console.log('click3e')
       EventBus.$emit('EVENT_NAME', item)
+      this.hideBack = !this.hideBack
     },
   },
    mounted() {
     EventBus.$on('bubbleClosed', (data) => {
-     
       (this.isBlur= false)
+      (this.hideBack= !this.hideBack)
     })
 
     // EventBus.$on("reset", () => {
@@ -237,6 +236,7 @@ img {
     padding: 2vh;
     display: block;
     width: 100%;
+    margin-top: 25%
   }
   .card {
     /* width: 75vw; */
@@ -253,6 +253,9 @@ img {
   }
   .card h1 {
     font-size: 5vw;
+  }
+  .hidden {
+    display:none;
   }
 }
 

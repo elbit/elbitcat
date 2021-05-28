@@ -1,5 +1,8 @@
  <template>
-  <div class="header" :class="{ mobile_bubble: isClosed }">
+  <div
+    class="header"
+    :class="{ mobile_bubble: isClosed , mobile_bubble_open: isOpen}"
+  >
     <div class="logo-wrapper" @click="resetFields()">
       <Logo-line />
       <Logo />
@@ -11,6 +14,9 @@
         :strings="post.speech"
         :home="home"
         :img="post.img"
+        :title="post.title"
+        :description="post.description"
+        :data="post"
       />
     </div>
   </div>
@@ -27,14 +33,17 @@ export default {
       home: true,
       post: [],
       isClosed: false,
+      isOpen: false,
     }
   },
   mounted() {
     EventBus.$on('EVENT_NAME', (data) => {
-      this.post = data
-      this.home = false
+      (this.post = data);
+      (this.home = false);
+      (this.isOpen = !this.isOpen);
+      console.log('hsokd')
     }),
-      EventBus.$on('bubbleMobileClosed', (data) => {
+    EventBus.$on('bubbleMobileClosed', (data) => {
         this.isClosed = !this.isClosed
       })
     // EventBus.$on("reset", () => {
@@ -49,11 +58,15 @@ export default {
       page,
     }
   },
+
   methods: {
     resetFields() {
-      Object.assign(this.$data, this.$options.data.call(this))
+      Object.assign(this.$data, this.$options.data.call(this));
+      EventBus.$emit('goHome')
     },
   },
+
+ 
 }
 </script>
 
@@ -91,8 +104,8 @@ export default {
     align-items: center;
     padding: 1rem;
     margin: 0;
-    position:fixed;
-    top:0;
+    position: fixed;
+    top: 0;
     transition: all 1s;
   }
   .logo-wrapper {
@@ -105,7 +118,7 @@ export default {
     width: 100%;
     height: 70%;
     borxder: tomato 1px solid;
-    
+
     /* background-color:green; */
   }
 
@@ -119,28 +132,56 @@ export default {
   .mobile_bubble {
     height: 15%;
     background-color: greenyellow;
-    box-shadow: 5px 5px 50px 10px skyblue;
+    //box-shadow: 5px 5px 50px 10px skyblue;
     flex-direction: row;
-     padding: 0.2rem 1rem;
-     position:fixed;
-     z-index: 2;
+    padding: 0.2rem 1rem;
+    position: fixed;
+    z-index: 2;
 
     .logo-wrapper {
-      width:14%;
+      width: 14%;
       height: 100%;
-      margin-right:2%;
-     }
+      margin-right: 2%;
+    }
     .b-wrapper {
-      width:84%;
+      width: 84%;
     }
 
     .bubble {
-      font-size:1.4rem;
+      font-size: 1.4rem;
     }
 
     .goto {
-      display:none;
-    }
+      display: none;
+    }  
+    
+  }
+  //bubble opened
+  .mobile_bubble_open {
+      height: auto;
+      flex-direction: column;
+      overflow: auto;
+      position:relative;
+      //background-color:white;
+      
+      .logo-wrapper {
+        width:100%;
+        height: 150px;
+        //background-color:red;
+      }
+      .b-wrapper {
+        width: 100%;
+        height:auto;
+        overflow:auto;
+      }
+      .close-button {
+        position:fixed!important;
+      }
+
+      .bubble {
+         height: auto;
+         overflow: auto;
+      }
   }
 }
 </style>

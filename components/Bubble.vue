@@ -8,19 +8,18 @@
         <span class="text typing"></span> <br />
         <!-- <span v-if="home" @click="pricesdata()" class="bubble-link">Preus</span> -->
         <span v-if="!home"
-          ><a class="bubble-link" target="blank" :href="url">{{ url }} </a>
-          |</span
-        >
+          ><a class="bubble-link" target="blank" :href="url">{{ url }} {{ test }}</a>
+          |</span >
 
         <!-- <span v-if="!home"   class="link">
                <NuxtLink to="/" >Qué més necessites?</NuxtLink>
             </span> -->
       </div>
     </vue-typed-js>
-
+      
     <div class="button-nav">
       <button class="goto" @click.prevent="closeBubbleMobile()">
-        veure projectes
+        veure projectes 
       </button>
       <button class="goto" @click.prevent="closeBubbleMobile()">
         contacte
@@ -39,6 +38,7 @@
       <div class="bubble-project_img">
         <div v-for="imgs of img" :key="imgs.slug">
           <img :class="{ img_active: isSpeaking }" :src="imgs" />
+        
         </div>
         <!-- <div>
           <img
@@ -71,16 +71,11 @@
       </div>
 
       <div class="bubble-project_copy">
-        <h2 class="bubble-project_copy-title">Descripció</h2>
+        
+        <h2 class="bubble-project_copy-title">{{ data.title }}</h2>
         <ul>
           <li>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
-            laboriosam autem veniam possimus architecto voluptatum laudantium,
-            nesciunt unde, sequi reprehenderit labore error totam voluptas
-            perspiciatis eos obcaecati quaerat repellat officia consectetur
-            nulla ipsa sapiente beatae. Praesentium hic nobis eius tempore amet
-            tempora reiciendis nostrum velit iure, accusamus asperiores sit
-            exercitationem ad, sunt, quo quas nulla voluptate.
+            {{ data.description }}
           </li>
         </ul>
       </div>
@@ -103,7 +98,7 @@ import EventBus from '../components/global/event-bus'
 export default {
   data() {
     return {
-      tabs: ['Home', 'Posts', 'Archive'],
+      //tabs: ['Home', 'Posts', 'Archive'],
       isActive: true,
       isSpeaking: false,
       isClosed: false,
@@ -116,22 +111,27 @@ export default {
         'aquest projecte esta molt be link',
         'es una salsa o una crema?',
       ],
+      
     }
   },
   // directives: {
   //     clickOutside: vClickOutside.directive
   //   },
   props: {
+    test:'',
     dataspeech: {
       default: 'Hola,soc el Bit.cat!<br>Qué necessites?',
       type: String,
     },
     strings: '',
     home: false,
-    strings: '',
+    // strings: '',
     url: '',
     img: [],
-    description: '',
+    // title: '',
+    // description: '',
+    alt: '',
+    data:{}
   },
   methods: {
     resetSpeech() {
@@ -157,6 +157,7 @@ export default {
       // this.isClosed = !this.isClosed;
       console.log('yeah')
       EventBus.$emit('bubbleMobileClosed')
+      this.dataspeech = 'quins projectes OMG!'
     },
     emitMethod(item) {
       // console.log('click3e')
@@ -176,6 +177,9 @@ export default {
     EventBus.$on('EVENT_NAME', (data) => {
       console.log('reload css')
       ;(this.eventBus = true), (this.isActive = true), (this.isSpeaking = true)
+    }),
+    EventBus.$on('goHome', (data) => {
+      this.dataspeech = 'T,han agradat els projectes, ara nomes et falta contactar'
     })
 
     // EventBus.$on("reset", () => {
@@ -264,20 +268,21 @@ export default {
   }
   &-project_copy {
     font-family: roboto;
-    font-size: 16px;
+    font-size: 14px;
+    font-style: normal;
     border-left: solid #333 1px;
     padding-left: 2rem;
     line-height: 1.5;
     height: 100%;
-    margin-top:1rem;
+    margin-top:2rem;
     &-title {
       font-weight: bold;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       margin-bottom: 1rem;
     }
   }
   &-project_img {
-    min-width: 75%;
+    width: 75%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -292,7 +297,8 @@ export default {
       justify-content: center;
       align-items: center;
       width: 50%;
-      borxder: royalblue 4px solid;
+      borxder: royalblue 1px solid;
+      padding: 0.5rem;
 
       @media (max-width: 768px) {
         width: 100%;
@@ -328,8 +334,9 @@ export default {
   height: 95vh;
   z-index: 2;
   padding: 1rem;
+  width:102%;
 
-  // box-shadow: 5px 60vh 300px 300px rgba(247, 247, 247, 0.8);
+  // box-shadow: 0px 5px 8px 5px silver;
   background-color: white;
   //  background: linear-gradient(90deg, #9be4ff, #daf1ec) no-repeat;
   // background-size: 0%;
@@ -381,7 +388,12 @@ export default {
     margin-top: 1rem;
     margin-right: 1rem;
   }
+
+  
 }
+.logo-line rect {
+    // box-shadow: 0px 5px 8px 5px silver;
+  }
 .head {
   transform: perspective(1000px) rotateY(35deg);
   transition: transform 1s ease 0s;
