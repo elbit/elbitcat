@@ -25,7 +25,7 @@
         contacte
       </button>
       <button class="goto" @click.prevent="closeBubbleMobile()">serveis</button>
-       <button class="goto" @click.prevent="closeBubbleMobile()">Modus operandi</button>
+       <button class="goto" @click.prevent="closeBubbleMobile()">Filosofia</button>
        <button class="goto goto-mobile-bubble" @click.prevent="closeBubbleMobile()">menu</button>
     </div>
 
@@ -405,7 +405,7 @@ export default {
       background-color: #ffadb6;
     }
     &:nth-child(4) {
-      background-color: yellowgreen;
+      background-color: #FFEAC1;
     }
      &:nth-child(5) {
       background-color: #ffadb6;

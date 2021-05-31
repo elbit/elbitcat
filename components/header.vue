@@ -1,4 +1,4 @@
- <template>
+<template>
   <div
     class="header"
     :class="{ mobile_bubble: isClosed , mobile_bubble_open: isOpen}"
@@ -65,8 +65,6 @@ export default {
       EventBus.$emit('goHome')
     },
   },
-
- 
 }
 </script>
 
@@ -130,7 +128,7 @@ export default {
   /////////////////////////////////// */
 
   .mobile_bubble {
-    height: 20%;
+    height: 20vh;
     //background-color: greenyellow;
     //box-shadow: 5px 5px 50px 10px skyblue;
     flex-direction: column;
@@ -141,7 +139,7 @@ export default {
     .logo-wrapper {
       width: 100%;
       height: 50%;
-      margin-right: 2%;
+      // margin-right: 2%;
     }
     .b-wrapper {
       width: 100%;
@@ -157,7 +155,6 @@ export default {
       display: none;
     }  
 
-   
     
   }
   //bubble opened
@@ -191,12 +188,12 @@ export default {
       }
 
       .bubble {
-         height: auto;
-         overflow: auto;
-         position:relative!important;
+        height: auto;
+        overflow: auto;
+        position:relative!important;
       }
 
-       .goto-mobile-bubble {
+      .goto-mobile-bubble {
       display: inline-block;
       width: 47%;
     }

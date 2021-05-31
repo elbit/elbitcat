@@ -14,35 +14,30 @@
 </script>
 
 
-<style>
+<style lang="scss">
 html {
-  /* font-display:  subpixel-antialiased; */
-  /* font-smooth: antialiased; */
+  font-display:  subpixel-antialiased;
+  font-smooth: antialiased;
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
+  font-display: swap;
 }
 
 body {
-  /* height: 100%; */
   boxrder: 4px solid rebeccapurple;
-  /* position:absolute; */
   width: 100%;
-
-  /* overflow: hidden; */
-  /* height: -webkit-fill-available;
-  height: 100vh; */
-  height: var(--app-height);
 }
+
 @media (max-width: 768px) {
   body {
     height: auto;
     /* border: 4px solid forestgreen; */
   }
-  .noscroll  .cardbase{
-  overflow:hidden!important;
-  height:100vh!important;
-  background-color:green;
-}
+  // .noscroll  .cardbase{
+  // overflow:hidden!important;
+  // height:100vh!important;
+  // background-color:green;
+  // }
 }
 
 html {
@@ -61,10 +56,8 @@ svg {
   max-width: 100%;
   /* max-height: 100%; */
 }
-
-
-
 </style>
+
 <script>
 import EventBus from '../components/global/event-bus'
 
@@ -86,7 +79,4 @@ export default {
   },
 
 }
-
-
-
 </script>

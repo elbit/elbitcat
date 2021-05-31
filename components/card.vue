@@ -14,7 +14,7 @@
 
       
     </div> -->
-  <div class="cardbase" :class="{ blur: isBlur,hidden: hideBack }" >
+  <div class="cardbase" :class="{ blur: isBlur, hidden: hideBack }" >
     <div class="card" v-for="post of pro" :key="post.slug">
       <div class="card-header">
         <h1>{{ post.title }}</h1>
@@ -236,7 +236,7 @@ img {
     padding: 2vh;
     display: block;
     width: 100%;
-    margin-top: 25%
+    /* margin-top: 25% */
   }
   .card {
     /* width: 75vw; */
