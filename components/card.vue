@@ -243,12 +243,13 @@ img {
     width: 100%;
     min-width: 100%;
     margin-bottom: 4rem;
+    margin-right:0;
     /* min-width: 75vw;
     max-height: 64vh; */
   }
 
   .img-wrapper {
-    height: 45vh;
+    height: 30%;
     padding: 1rem;
   }
   .card h1 {
