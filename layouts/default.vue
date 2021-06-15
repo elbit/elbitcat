@@ -1,5 +1,5 @@
 <template>
- <div :class="{ noscroll: isClosed }">  <!-- no esta actiu a -->
+ <div :class="{ noscroll: isClosed }" style="height:100%">  <!-- no esta actiu a -->
     <div class="header-container">
       <Header />
     </div>

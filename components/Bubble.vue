@@ -211,7 +211,7 @@ export default {
   @media (max-width: 768px) {
     height: 100%;
     // background-color: red;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 400;
     border: none;
     justify-content: space-around;

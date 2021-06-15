@@ -124,7 +124,7 @@ export default {
 
 @media (max-width: 768px) {
   .header-container {
-    //height: 100vh;
+    height: 100vh;
   }
   .header {
     margin: 0;
@@ -191,25 +191,26 @@ export default {
 
     .logo-wrapper {
       width: 100%;
-      height: 30vh;
-      // border: 1px solid red;
+      height: 30%;
+      border: 1px solid red;
       //background-color:red;
     }
     .b-wrapper {
       width: 100%;
-      height:70vh;
-      overflow:auto;
+      height:70%;
+      //:auto;
        display:flex;
     flex-direction: column;
     justify-content: space-around;
+    border: 1px solid green;
     }
 
     .bubble {
-      height:35vh;
+      height:35%;
     }
 
     .navi {
-      height:35vh;
+      height:35%;
     }
 
     //ATENCIO .speaking is overridint specificity
