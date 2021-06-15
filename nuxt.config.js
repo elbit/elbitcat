@@ -24,14 +24,16 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    'animate.css'
+    'animate.css',
+    '~assets/scss/variables.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
 
     '~/plugins/typeW.js',
-    '~/plugins/clickOut.js'
+    '~/plugins/clickOut.js',
+    '~/plugins/mq.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -41,6 +43,10 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxt/image',
+    '@nuxtjs/device'
+    
+    // np
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -49,7 +55,14 @@ export default {
     // '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/style-resources',
+    // '@nuxtjs/nuxt-mq',
+    
+    // su
   ],
+  styleResources: {
+    scss: ['./assets/scss/*.scss']
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {

@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ noscroll: isClosed }">
+ <div :class="{ noscroll: isClosed }">  <!-- no esta actiu a -->
     <div class="header-container">
       <Header />
     </div>
@@ -10,21 +10,40 @@
 </template>
 
 <script>
+import EventBus from '../components/global/event-bus'
 
+export default {
+  data() {
+    return {
+      isClosed: true,
+    }
+  },
+  mounted() { //no esta en us pq
+    EventBus.$on('bubbleMobileClosed', (data) => {
+      this.isClosed = !this.isClosed
+    })
+    // EventBus.$on("reset", () => {
+    //   Object.assign(this.$data, this.$options.data()); //https://stackoverflow.com/questions/35604987/is-there-a-proper-way-of-resetting-a-components-initial-data-in-vuejs
+
+    // }); 
+  },
+}
 </script>
-
 
 <style lang="scss">
 html {
-  font-display:  subpixel-antialiased;
+
+  height: -webkit-fill-available; //this is working?
+
+  font-display: subpixel-antialiased;
   font-smooth: antialiased;
-  font-family: 'Roboto', sans-serif;
+  font-family: $copy;
   font-weight: 100;
   font-display: swap;
 }
 
 body {
-  boxrder: 4px solid rebeccapurple;
+  // border: 2px solid rebeccapurple;
   width: 100%;
 }
 
@@ -33,15 +52,6 @@ body {
     height: auto;
     /* border: 4px solid forestgreen; */
   }
-  // .noscroll  .cardbase{
-  // overflow:hidden!important;
-  // height:100vh!important;
-  // background-color:green;
-  // }
-}
-
-html {
-  height: -webkit-fill-available;
 }
 
 *,
@@ -54,29 +64,5 @@ html {
 img,
 svg {
   max-width: 100%;
-  /* max-height: 100%; */
 }
 </style>
-
-<script>
-import EventBus from '../components/global/event-bus'
-
-export default { 
-  data() {
-    return {
-      isClosed: true,
-    }
-  },
-
-  mounted() {
-      EventBus.$on('bubbleMobileClosed', (data) => {
-        this.isClosed = !this.isClosed
-      })
-    // EventBus.$on("reset", () => {
-    //   Object.assign(this.$data, this.$options.data()); //https://stackoverflow.com/questions/35604987/is-there-a-proper-way-of-resetting-a-components-initial-data-in-vuejs
-
-    // });
-  },
-
-}
-</script>
