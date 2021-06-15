@@ -51,6 +51,19 @@ export default {
 
     // });
   },
+   computed: {
+    // dogImage() {
+    //   // if (!this.img) {
+    //   //   return
+    //   // }
+    //   const fileName = this.img
+
+    //   for (let i = 0; i < fileName.length; i++) {
+    //     require(`../assets/img/proyectos/${fileName[i]}`) // the module request
+    //   }
+    // },
+    bbState(){ return this.$store.state.bb} 
+  },
 }
 </script>
 

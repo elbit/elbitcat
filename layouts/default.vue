@@ -1,5 +1,5 @@
 <template>
- <div :class="{ noscroll: isClosed }" style="height:100%">  <!-- no esta actiu a -->
+ <div :class="{ mh_open: mhState=='open' }">  <!-- no esta actiu a -->
     <div class="header-container">
       <Header />
     </div>
@@ -27,6 +27,10 @@ export default {
 
     // }); 
   },
+  computed: {
+     bbState(){ return this.$store.state.bb} ,
+    mhState(){ return this.$store.state.mobile_header} 
+  },
 }
 </script>
 
@@ -51,6 +55,9 @@ body {
   body {
     height: auto;
     /* border: 4px solid forestgreen; */
+  }
+  .mh_open {
+    height:100%
   }
 }
 

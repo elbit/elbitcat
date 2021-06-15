@@ -123,8 +123,12 @@ export default {
 }
 
 @media (max-width: 768px) {
+  #__layout, #__nuxt , body{
+     height: 100%; //this a super-shame-shit because vh units no working fine on mobile
+  }
   .header-container {
-    height: 100vh;
+    display: flex;
+    height: 100%;
   }
   .header {
     margin: 0;
@@ -185,7 +189,7 @@ export default {
     display:flex;
     flex-direction: column;
     overflow: auto;
-    position: relative;
+    //position: relative;
     background-color:white;
     //border: red 2px solid;
 
