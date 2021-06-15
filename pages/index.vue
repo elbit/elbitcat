@@ -1,6 +1,6 @@
 <template>
-  <div class="cards-wrapper" :class="{ blur: isSpeaking }">
-    <Card :pro="projectes" />
+  <div class="cards-wrapper" :class="{ display_cards: !headerIsOpen}" >
+    <Card :data="projectes" />
   </div>
 </template>
 
@@ -17,17 +17,34 @@ export default {
   },
   data() {
     return {
-      isSpeaking: false,
+      //  bubbleIsOpen: false,
+       headerIsOpen:true //for mobile onlu
     }
   },
+  methods: {
+    // onScroll() {
+    //   this.isScrolling = true
+    //   console.log('scrolled')
+    // }
+  },
   mounted() {
-    EventBus.$on('EVENT_NAME', (data) => {
-      this.isSpeaking = true
-      // this.key++
+    //CLARAMENTE VUEX
+    EventBus.$on('OPEN_PROJECT', (data) => {
+      // this.bubbleIsOpen = true
+      this.headerIsOpen = true
     }),
-      EventBus.$on('bubbleClosed', (data) => {
-        this.isSpeaking = false
-        // this.key++
+    EventBus.$on('bubbleClosed', (data) => {
+      // this.bubbleIsOpen = false
+      this.headerIsOpen = false
+      })
+    EventBus.$on('gotoProjects', (data) => {
+      // this.bubbleIsOpen = false
+      this.headerIsOpen = false
+      })
+    EventBus.$on('goHome', (data) => {
+      // this.bubbleIsOpen = false
+      this.headerIsOpen = true
+      console.log('gohome')
       })
     // EventBus.$on("reset", () => {
     //   Object.assign(this.$data, this.$options.data()); //https://stackoverflow.com/questions/35604987/is-there-a-proper-way-of-resetting-a-components-initial-data-in-vuejs
@@ -37,9 +54,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .cards-wrapper {
-  borxder: solid 10px green;
+  // border: solid 10px green;
   /* margin-top:19vh; */
   width: auto;
   overflow-x: auto;
@@ -47,12 +64,20 @@ export default {
   height: 79vh;
 }
 
+.blur {
+  opacity:0.5;
+}
+
 @media (max-width: 768px) {
   .cards-wrapper {
+    // display:none;
     margin-top:20vh;
-    height: auto !important;
+    height: auto !important; //why?
     overflow-x: auto;
     overflow-y: auto;
   }
+  // .display_cards {
+  //   display:block;
+  // }
 }
 </style>
